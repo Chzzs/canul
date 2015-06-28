@@ -49,6 +49,50 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
+header {
+  height: 8em;
+  vertical-align: top;
+  background-color: #F1F1F1;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 0 2em 0 2em; }
+  header img {
+    display: inline-block; }
+  header nav {
+    display: inline-block; }
+    header nav ul {
+      list-style-type: none; }
+      header nav ul li {
+        float: left;
+        display: block;
+        margin: 0 1em 0 1em; }
+        header nav ul li a {
+          text-decoration: none;
+          color: #333333;
+          font-size: x-large; }
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: "fonts/lato/Lato-Bold.ttf"; }
+@font-face {
+  font-family: "Source-Regular";
+  src: "fonts/source-serif-pro/SourceSerifPro-Regular"; }
+html {
+  font-size: 100%;
+  line-height: 1.5em; }
+
+h1, h2, h3 {
+  font-family: "Lato-Bold";
+  font-size: x-large; }
+
+* {
+  box-sizing: border-box; }
+
 body {
+  font-family: "Source-Regular";
   background-color: #FAFAFA;
   color: #333333; }
+
+main {
+  display: block;
+  margin: 1em auto;
+  width: 50em; }
