@@ -7,27 +7,132 @@
 @import compass/reset
 @import compass/typography
 @import compass/css3
-@import header
 
+
+
++font-face("Lato-Medium", "fonts/lato/Lato-Medium.ttf")
++font-face("Lato-Regular", "fonts/lato/Lato-Regular.ttf")
 +font-face("Lato-Bold", "fonts/lato/Lato-Bold.ttf")
-+font-face("Source-Regular", "fonts/source-serif-pro/SourceSerifPro-Regular")
++font-face("Poly-Regular", "fonts/poly/Poly-Regular.otf")
 
 $font-size : 16px
-+establish-baseline($font-size)
+$line-height: 24px
+$blue: #1aadd9
 
-h1, h2, h3
-  font-family: "Lato-Bold"
-  font-size: x-large
++establish-baseline($font-size)
 
 *
   box-sizing: border-box
 
-body
+
+@import header
+@import article
+
+h1, h2, h3
+  font-family: "Lato-Bold"
+
+a
+  text-decoration: none
+  font-family: "Lato-Medium"
+  +adjust-font-size-to(0.75*$font-size)
+
+p
   font-family: "Source-Regular"
+
+body
   background-color: #FAFAFA
   color: #333333
 
-main
-  display: block
+main.page-main
+  +display-flex(flex)
+  +flex-flow(row wrap)
+  +justify-content(flex-end)
+
   margin: 1em auto
   width: 50em
+
+article
+  margin: 0.5em 0.5em 0.5em 0
+  background: #F1F1F1
+  width: 24em
+  display: inline-block
+
+  header.article-header
+    position: relative
+    height: 8em
+    overflow: hidden
+
+  span.article-topic
+    position: absolute
+    display: inline-block
+    z-index: 1
+    top: 0
+    left: 0
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 3em 3em 0 0
+    border-color: rgba(darken($blue, 50%),0.5) transparent transparent transparent
+    a
+      color: #F1F1F1
+      position: absolute
+      top: -3.75em
+      left: 0.5em
+
+  a.article-full
+    position: absolute
+    border: #333333 1px solid
+    color: #333333
+    display: inline-block
+    padding: 0 1em 0 1em
+    right: 1em
+    bottom: -4em
+    &:hover
+      color: #FEFEFE
+      background: #333333
+
+
+  img.article-img
+    display: inline-block
+    position: relative
+    top: 50%
+    left: 50%
+    +translate(-50%, -50%)
+
+  main.article-main
+    position: relative
+    width: inherit
+    display: block
+
+    h1.article-title
+      display: block
+      padding: 0 0.5em 0 0.5em
+      +leader(1, $font-size*2)
+      +adjust-font-size-to($font-size*2)
+      +trailer(1, $font-size*2)
+
+    p.article-abstract
+      display: block
+      width: inherit
+      padding: 0 1em 0 1em
+      font-family: "Poly-Regular"
+      +adjust-font-size-to($font-size)
+      +trailer(3, $font-size)
+      &:after
+        content: '\2026'
+
+  footer.article-footer
+    background: #E5E5E5
+
+    ul.article-social
+      padding: 0 1em 0 1em
+      +display-flex(flex)
+
+      li
+        +flex(1)
+        text-align: center
+        a
+          display: inline-block
+          font-family: "Lato-Medium"
+          color: #333333
+          text-decoration: none

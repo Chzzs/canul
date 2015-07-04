@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -49,50 +50,150 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
-header {
+@font-face {
+  font-family: "Lato-Medium";
+  src: "fonts/lato/Lato-Medium.ttf"; }
+@font-face {
+  font-family: "Lato-Regular";
+  src: "fonts/lato/Lato-Regular.ttf"; }
+@font-face {
+  font-family: "Lato-Bold";
+  src: "fonts/lato/Lato-Bold.ttf"; }
+@font-face {
+  font-family: "Poly-Regular";
+  src: "fonts/poly/Poly-Regular.otf"; }
+html {
+  font-size: 100%;
+  line-height: 1.5em; }
+
+* {
+  box-sizing: border-box; }
+
+header.page-header {
   height: 8em;
   vertical-align: top;
   background-color: #F1F1F1;
   border-bottom: 1px solid #E5E5E5;
   padding: 0 2em 0 2em; }
-  header img {
+  header.page-header img {
     display: inline-block; }
-  header nav {
+  header.page-header nav {
     display: inline-block; }
-    header nav ul {
+    header.page-header nav ul {
       list-style-type: none; }
-      header nav ul li {
+      header.page-header nav ul li {
         float: left;
         display: block;
         margin: 0 1em 0 1em; }
-        header nav ul li a {
+        header.page-header nav ul li a {
           text-decoration: none;
           color: #333333;
           font-size: x-large; }
 
-@font-face {
-  font-family: "Lato-Bold";
-  src: "fonts/lato/Lato-Bold.ttf"; }
-@font-face {
-  font-family: "Source-Regular";
-  src: "fonts/source-serif-pro/SourceSerifPro-Regular"; }
-html {
-  font-size: 100%;
-  line-height: 1.5em; }
-
 h1, h2, h3 {
-  font-family: "Lato-Bold";
-  font-size: x-large; }
+  font-family: "Lato-Bold"; }
 
-* {
-  box-sizing: border-box; }
+a {
+  text-decoration: none;
+  font-family: "Lato-Medium";
+  font-size: 0.75em;
+  line-height: 2em; }
+
+p {
+  font-family: "Source-Regular"; }
 
 body {
-  font-family: "Source-Regular";
   background-color: #FAFAFA;
   color: #333333; }
 
-main {
-  display: block;
+main.page-main {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
   margin: 1em auto;
   width: 50em; }
+
+article {
+  margin: 0.5em 0.5em 0.5em 0;
+  background: #F1F1F1;
+  width: 24em;
+  display: inline-block; }
+  article header.article-header {
+    position: relative;
+    height: 8em;
+    overflow: hidden; }
+  article span.article-topic {
+    position: absolute;
+    display: inline-block;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 3em 3em 0 0;
+    border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent; }
+    article span.article-topic a {
+      color: #F1F1F1;
+      position: absolute;
+      top: -3.75em;
+      left: 0.5em; }
+  article a.article-full {
+    position: absolute;
+    border: #333333 1px solid;
+    color: #333333;
+    display: inline-block;
+    padding: 0 1em 0 1em;
+    right: 1em;
+    bottom: -4em; }
+    article a.article-full:hover {
+      color: #FEFEFE;
+      background: #333333; }
+  article img.article-img {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  article main.article-main {
+    position: relative;
+    width: inherit;
+    display: block; }
+    article main.article-main h1.article-title {
+      display: block;
+      padding: 0 0.5em 0 0.5em;
+      margin-top: 0.75em;
+      font-size: 2em;
+      line-height: 1.5em;
+      margin-bottom: 0.75em; }
+    article main.article-main p.article-abstract {
+      display: block;
+      width: inherit;
+      padding: 0 1em 0 1em;
+      font-family: "Poly-Regular";
+      font-size: 1em;
+      line-height: 1.5em;
+      margin-bottom: 4.5em; }
+      article main.article-main p.article-abstract:after {
+        content: "…"; }
+  article footer.article-footer {
+    background: #E5E5E5; }
+    article footer.article-footer ul.article-social {
+      padding: 0 1em 0 1em;
+      display: -webkit-flex;
+      display: flex; }
+      article footer.article-footer ul.article-social li {
+        -webkit-flex: 1;
+        flex: 1;
+        text-align: center; }
+        article footer.article-footer ul.article-social li a {
+          display: inline-block;
+          font-family: "Lato-Medium";
+          color: #333333;
+          text-decoration: none; }
