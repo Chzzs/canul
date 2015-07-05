@@ -70,7 +70,7 @@ html {
   box-sizing: border-box; }
 
 header.page-header {
-  height: 8em;
+  height: 4em;
   vertical-align: top;
   background-color: #F1F1F1;
   border-bottom: 1px solid #E5E5E5;
@@ -92,6 +92,9 @@ header.page-header {
 
 h1, h2, h3 {
   font-family: "Lato-Bold"; }
+
+h1 {
+  font-size: 28px; }
 
 a {
   text-decoration: none;
@@ -118,29 +121,26 @@ main.page-main {
 
 article {
   margin: 0.5em 0.5em 0.5em 0;
-  background: #F1F1F1;
+  background: #ededed;
   width: 24em;
-  display: inline-block; }
+  display: inline-block;
+  box-shadow: 0em 0.1em 0.5em -0.05em rgba(51, 51, 51, 0.75);
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -moz-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in; }
   article header.article-header {
     position: relative;
-    height: 8em;
+    height: 16em;
     overflow: hidden; }
-  article span.article-topic {
-    position: absolute;
-    display: inline-block;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 3em 3em 0 0;
-    border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent; }
-    article span.article-topic a {
-      color: #F1F1F1;
-      position: absolute;
-      top: -3.75em;
-      left: 0.5em; }
   article a.article-full {
     position: absolute;
     border: #333333 1px solid;
@@ -161,39 +161,108 @@ article {
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
-  article main.article-main {
-    position: relative;
-    width: inherit;
-    display: block; }
-    article main.article-main h1.article-title {
-      display: block;
-      padding: 0 0.5em 0 0.5em;
-      margin-top: 0.75em;
-      font-size: 2em;
-      line-height: 1.5em;
-      margin-bottom: 0.75em; }
-    article main.article-main p.article-abstract {
-      display: block;
-      width: inherit;
-      padding: 0 1em 0 1em;
-      font-family: "Poly-Regular";
+  article h1.article-title {
+    background: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 0 0.5em 0 0.5em;
+    padding-top: 0.42857em;
+    font-size: 1.75em;
+    line-height: 1.71429em;
+    padding-bottom: 0.42857em;
+    -moz-transition-property: padding;
+    -o-transition-property: padding;
+    -webkit-transition-property: padding;
+    transition-property: padding;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms; }
+
+article:hover h1.article-title {
+  padding-bottom: 1.125em;
+  -moz-transition-property: padding;
+  -o-transition-property: padding;
+  -webkit-transition-property: padding;
+  transition-property: padding;
+  -moz-transition-delay: 500ms;
+  -o-transition-delay: 500ms;
+  -webkit-transition-delay: 500ms;
+  transition-delay: 500ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in; }
+
+article main.article-main {
+  position: relative;
+  width: inherit;
+  display: block; }
+  article main.article-main a.article-link {
+    padding: 0 1em 0 1em;
+    margin: 0 1.5em 1em 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border: 1.5px solid #333333;
+    color: #333333;
+    background: none;
+    display: inline-block; }
+  article main.article-main a.article-link:hover {
+    color: #FAFAFA;
+    background: #333333; }
+  article main.article-main span.topic {
+    position: absolute;
+    top: -1.5em;
+    right: 1em;
+    background: #1aadd9;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.1em 0.4em -0.05em rgba(51, 51, 51, 0.75); }
+    article main.article-main span.topic.topic-cpe {
+      background: #1aadd9; }
+    article main.article-main span.topic.topic-cgp {
+      background: #ec2949; }
+    article main.article-main span.topic.topic-asso {
+      background: #aace1b; }
+    article main.article-main span.topic a {
+      color: #FAFAFA;
       font-size: 1em;
       line-height: 1.5em;
-      margin-bottom: 4.5em; }
-      article main.article-main p.article-abstract:after {
-        content: "…"; }
-  article footer.article-footer {
-    background: #E5E5E5; }
-    article footer.article-footer ul.article-social {
-      padding: 0 1em 0 1em;
-      display: -webkit-flex;
-      display: flex; }
-      article footer.article-footer ul.article-social li {
-        -webkit-flex: 1;
-        flex: 1;
-        text-align: center; }
-        article footer.article-footer ul.article-social li a {
-          display: inline-block;
-          font-family: "Lato-Medium";
-          color: #333333;
-          text-decoration: none; }
+      line-height: 3em;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+      text-align: center; }
+    article main.article-main span.topic:hover {
+      background: #179bc2; }
+  article main.article-main p.article-abstract {
+    display: block;
+    width: inherit;
+    padding: 0 1em 0 1em;
+    font-family: "Poly-Regular";
+    padding-top: 2.25em;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding-bottom: 2.25em; }
+    article main.article-main p.article-abstract:after {
+      content: "…"; }
+article footer.article-footer {
+  background: #d8d8d8; }
+  article footer.article-footer ul.article-social {
+    padding: 0.5em 1em 0 1em; }
+    article footer.article-footer ul.article-social li {
+      display: inline-block;
+      text-align: center; }
+      article footer.article-footer ul.article-social li a {
+        display: inline-block;
+        font-family: "Lato-Medium";
+        color: #333333;
+        text-decoration: none; }

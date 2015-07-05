@@ -17,7 +17,17 @@
 
 $font-size : 16px
 $line-height: 24px
+
+$h1: 1.75
+
+
 $blue: #1aadd9
+$orange: #ed8200
+$green: #aace1b
+$pink: #ec2949
+$gray: #E5E5E5
+$white: #FAFAFA
+$black: #333333
 
 +establish-baseline($font-size)
 
@@ -31,6 +41,9 @@ $blue: #1aadd9
 h1, h2, h3
   font-family: "Lato-Bold"
 
+h1
+  font-size: $h1 * $font-size
+
 a
   text-decoration: none
   font-family: "Lato-Medium"
@@ -40,8 +53,8 @@ p
   font-family: "Source-Regular"
 
 body
-  background-color: #FAFAFA
-  color: #333333
+  background-color: $white
+  color: $black
 
 main.page-main
   +display-flex(flex)
@@ -51,38 +64,28 @@ main.page-main
   margin: 1em auto
   width: 50em
 
+
+
+
 article
   margin: 0.5em 0.5em 0.5em 0
-  background: #F1F1F1
+  background: darken($white, 5%)
   width: 24em
   display: inline-block
+  box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
+  +transition-property(box-shadow)
+  +transition-duration(150ms)
+  +transition-timing-function(ease-in)
 
   header.article-header
     position: relative
-    height: 8em
+    height: 16em
     overflow: hidden
-
-  span.article-topic
-    position: absolute
-    display: inline-block
-    z-index: 1
-    top: 0
-    left: 0
-    width: 0
-    height: 0
-    border-style: solid
-    border-width: 3em 3em 0 0
-    border-color: rgba(darken($blue, 50%),0.5) transparent transparent transparent
-    a
-      color: #F1F1F1
-      position: absolute
-      top: -3.75em
-      left: 0.5em
 
   a.article-full
     position: absolute
-    border: #333333 1px solid
-    color: #333333
+    border: $black 1px solid
+    color: $black
     display: inline-block
     padding: 0 1em 0 1em
     right: 1em
@@ -99,37 +102,96 @@ article
     left: 50%
     +translate(-50%, -50%)
 
+  h1.article-title
+    background: rgba(white, 0.75)
+    position: absolute
+    bottom: 0
+    left: 0
+    display: inline-block
+    width: 100%
+    padding: 0 0.5em 0 0.5em
+    +padding-leader(0.5, $font-size*$h1)
+    +adjust-font-size-to($font-size*$h1)
+    +padding-trailer(0.5, $font-size*$h1)
+    +transition-property(padding)
+    +transition-duration(150ms)
+
+article:hover
+  h1.article-title
+    +padding-trailer(1.5, $font-size*2)
+    +transition-property(padding)
+    +transition-delay(500ms)
+    +transition-duration(200ms)
+    +transition-timing-function(ease-in)
+
+article
   main.article-main
     position: relative
     width: inherit
     display: block
 
-    h1.article-title
-      display: block
-      padding: 0 0.5em 0 0.5em
-      +leader(1, $font-size*2)
-      +adjust-font-size-to($font-size*2)
-      +trailer(1, $font-size*2)
+    a.article-link
+      padding: 0 1em 0 1em
+      margin: 0 1.5em 1em 1.5em
+      +padding-leader(0.25, $font-size*0.75)
+      +padding-trailer(0.25, $font-size*0.75)
+      border: 1.5px solid $black
+      color: $black
+      background: none
+      display: inline-block
+    a.article-link:hover
+      color: $white
+      background: $black
+
+
+
+    span.topic
+      position: absolute
+      top: -1.5em
+      right: 1em
+      background: $blue
+      width: 3em
+      height: 3em
+      border-radius: 50%
+      box-shadow: 0em 0.1em 0.4em -0.05em rgba($black, 0.75)
+      &.topic-cpe
+        background: $blue
+      &.topic-cgp
+        background: $pink
+      &.topic-asso
+        background: $green
+
+      a
+        color: $white
+        +adjust-font-size-to($font-size)
+        line-height: 3em
+        display: inline-block
+        width: inherit
+        height: inherit
+        text-align: center
+      &:hover
+        background: darken($blue, 5%)
+
+
 
     p.article-abstract
       display: block
       width: inherit
       padding: 0 1em 0 1em
       font-family: "Poly-Regular"
+      +padding-leader(1.5, $font-size)
       +adjust-font-size-to($font-size)
-      +trailer(3, $font-size)
+      +padding-trailer(1.5, $font-size)
       &:after
         content: '\2026'
 
   footer.article-footer
-    background: #E5E5E5
+    background: darken($gray , 5%)
 
     ul.article-social
-      padding: 0 1em 0 1em
-      +display-flex(flex)
-
+      padding: 0.5em 1em 0 1em
       li
-        +flex(1)
+        display: inline-block
         text-align: center
         a
           display: inline-block
