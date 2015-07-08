@@ -52,43 +52,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 @font-face {
   font-family: "Lato-Medium";
-  src: "fonts/lato/Lato-Medium.ttf"; }
+  src: url('/fonts/lato/Lato-Medium.ttf?1427206712') format('truetype'); }
 @font-face {
   font-family: "Lato-Regular";
-  src: "fonts/lato/Lato-Regular.ttf"; }
+  src: url('/fonts/lato/Lato-Regular.ttf?1427206714') format('truetype'); }
 @font-face {
   font-family: "Lato-Bold";
-  src: "fonts/lato/Lato-Bold.ttf"; }
+  src: url('/fonts/lato/Lato-Bold.ttf?1427206704') format('truetype'); }
 @font-face {
   font-family: "Poly-Regular";
-  src: "fonts/poly/Poly-Regular.otf"; }
+  src: url('/fonts/poly/Poly-Regular.otf?1370347994') format('opentype'); }
 html {
   font-size: 100%;
   line-height: 1.5em; }
 
 * {
   box-sizing: border-box; }
-
-header.page-header {
-  height: 4em;
-  vertical-align: top;
-  background-color: #F1F1F1;
-  border-bottom: 1px solid #E5E5E5;
-  padding: 0 2em 0 2em; }
-  header.page-header img {
-    display: inline-block; }
-  header.page-header nav {
-    display: inline-block; }
-    header.page-header nav ul {
-      list-style-type: none; }
-      header.page-header nav ul li {
-        float: left;
-        display: block;
-        margin: 0 1em 0 1em; }
-        header.page-header nav ul li a {
-          text-decoration: none;
-          color: #333333;
-          font-size: x-large; }
 
 h1, h2, h3 {
   font-family: "Lato-Bold"; }
@@ -106,8 +85,61 @@ p {
   font-family: "Source-Regular"; }
 
 body {
-  background-color: #FAFAFA;
+  background-color: #ededed;
   color: #333333; }
+
+header.page-header {
+  height: 8em;
+  vertical-align: top;
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #D5D5D5;
+  padding: 0 2em 0 2em;
+  box-shadow: 0em 0.1em 0.5em 0em rgba(51, 51, 51, 0.1); }
+  header.page-header img#logo {
+    display: block;
+    margin: 0 auto; }
+  header.page-header a#menu {
+    font-size: 1em;
+    line-height: 1.5em;
+    position: fixed;
+    left: 2.5em;
+    top: 2.5em;
+    background: #1aadd9;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75); }
+    header.page-header a#menu span {
+      position: relative;
+      display: block;
+      top: 50%;
+      left: 50%;
+      width: 1.75em;
+      height: 0.25em;
+      background: #FAFAFA;
+      content: " ";
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+    header.page-header a#menu span:after {
+      position: absolute;
+      display: block;
+      top: 200%;
+      width: 1.75em;
+      height: 0.25em;
+      background: #FAFAFA;
+      content: " "; }
+    header.page-header a#menu span:before {
+      display: block;
+      position: absolute;
+      top: -200%;
+      width: 1.75em;
+      height: 0.25em;
+      background: #FAFAFA;
+      content: " "; }
+  header.page-header a#menu:hover {
+    background: #1589ab; }
 
 main.page-main {
   display: -webkit-flex;
@@ -117,13 +149,18 @@ main.page-main {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
   margin: 1em auto;
-  width: 50em; }
+  width: 100%;
+  max-width: 65em;
+  padding: 0 0 0 0.5em; }
+
+div.article-container {
+  -webkit-flex: 0 0 33.33333%;
+  flex: 0 0 33.33333%; }
 
 article {
   margin: 0.5em 0.5em 0.5em 0;
-  background: #ededed;
-  width: 24em;
-  display: inline-block;
+  background: #FAFAFA;
+  width: inherit;
   box-shadow: 0em 0.1em 0.5em -0.05em rgba(51, 51, 51, 0.75);
   -moz-transition-property: box-shadow;
   -o-transition-property: box-shadow;
@@ -161,33 +198,45 @@ article {
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
-  article h1.article-title {
-    background: rgba(255, 255, 255, 0.75);
+  article div.article-info {
     position: absolute;
-    bottom: 0;
+    bottom: -3em;
     left: 0;
-    display: inline-block;
-    width: 100%;
-    padding: 0 0.5em 0 0.5em;
-    padding-top: 0.42857em;
-    font-size: 1.75em;
-    line-height: 1.71429em;
-    padding-bottom: 0.42857em;
-    -moz-transition-property: padding;
-    -o-transition-property: padding;
-    -webkit-transition-property: padding;
-    transition-property: padding;
+    background: rgba(255, 255, 255, 0.75);
+    -moz-transition-property: bottom;
+    -o-transition-property: bottom;
+    -webkit-transition-property: bottom;
+    transition-property: bottom;
     -moz-transition-duration: 150ms;
     -o-transition-duration: 150ms;
     -webkit-transition-duration: 150ms;
     transition-duration: 150ms; }
+    article div.article-info h1.article-title {
+      display: inline-block;
+      width: 100%;
+      padding: 0 0.5em 0 0.5em;
+      padding-top: 0.42857em;
+      font-size: 1.75em;
+      line-height: 1.71429em;
+      padding-bottom: 0.42857em; }
+    article div.article-info p.article-author {
+      padding: 0 1em 0 1em;
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
+      background: none;
+      display: inline-block; }
+      article div.article-info p.article-author span {
+        font-weight: 600; }
+    article div.article-info p.article-date {
+      background: none;
+      display: inline-block; }
 
-article:hover h1.article-title {
-  padding-bottom: 1.125em;
-  -moz-transition-property: padding;
-  -o-transition-property: padding;
-  -webkit-transition-property: padding;
-  transition-property: padding;
+article:hover div.article-info {
+  bottom: 0;
+  -moz-transition-property: bottom;
+  -o-transition-property: bottom;
+  -webkit-transition-property: bottom;
+  transition-property: bottom;
   -moz-transition-delay: 500ms;
   -o-transition-delay: 500ms;
   -webkit-transition-delay: 500ms;
@@ -204,15 +253,32 @@ article:hover h1.article-title {
 article main.article-main {
   position: relative;
   width: inherit;
-  display: block; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end; }
+  article main.article-main p.article-abstract {
+    -webkit-flex: 1;
+    flex: 1;
+    width: inherit;
+    padding: 0 1em 0 1em;
+    font-family: "Poly-Regular";
+    padding-top: 2.25em;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding-bottom: 2.25em; }
+    article main.article-main p.article-abstract:after {
+      content: "…"; }
   article main.article-main a.article-link {
+    align-self: flex-end;
     padding: 0 1em 0 1em;
     margin: 0 1.5em 1em 1.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
     border: 1.5px solid #333333;
     color: #333333;
-    background: none;
     display: inline-block; }
   article main.article-main a.article-link:hover {
     color: #FAFAFA;
@@ -227,7 +293,7 @@ article main.article-main {
     border-radius: 50%;
     box-shadow: 0em 0.1em 0.4em -0.05em rgba(51, 51, 51, 0.75); }
     article main.article-main span.topic.topic-cpe {
-      background: #1aadd9; }
+      background: #aace1b; }
     article main.article-main span.topic.topic-cgp {
       background: #ec2949; }
     article main.article-main span.topic.topic-asso {
@@ -243,26 +309,3 @@ article main.article-main {
       text-align: center; }
     article main.article-main span.topic:hover {
       background: #179bc2; }
-  article main.article-main p.article-abstract {
-    display: block;
-    width: inherit;
-    padding: 0 1em 0 1em;
-    font-family: "Poly-Regular";
-    padding-top: 2.25em;
-    font-size: 1em;
-    line-height: 1.5em;
-    padding-bottom: 2.25em; }
-    article main.article-main p.article-abstract:after {
-      content: "…"; }
-article footer.article-footer {
-  background: #d8d8d8; }
-  article footer.article-footer ul.article-social {
-    padding: 0.5em 1em 0 1em; }
-    article footer.article-footer ul.article-social li {
-      display: inline-block;
-      text-align: center; }
-      article footer.article-footer ul.article-social li a {
-        display: inline-block;
-        font-family: "Lato-Medium";
-        color: #333333;
-        text-decoration: none; }

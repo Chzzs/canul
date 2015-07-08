@@ -10,22 +10,24 @@
 
 
 
-+font-face("Lato-Medium", "fonts/lato/Lato-Medium.ttf")
-+font-face("Lato-Regular", "fonts/lato/Lato-Regular.ttf")
-+font-face("Lato-Bold", "fonts/lato/Lato-Bold.ttf")
-+font-face("Poly-Regular", "fonts/poly/Poly-Regular.otf")
++font-face("Lato-Medium", font-files("lato/Lato-Medium.ttf"))
++font-face("Lato-Regular", font-files("lato/Lato-Regular.ttf"))
++font-face("Lato-Bold", font-files("lato/Lato-Bold.ttf"))
++font-face("Poly-Regular", font-files("poly/Poly-Regular.otf"))
 
 $font-size : 16px
 $line-height: 24px
 
 $h1: 1.75
 
+$break-large: 65em
+$break-small: 32.5em
 
 $blue: #1aadd9
 $orange: #ed8200
 $green: #aace1b
 $pink: #ec2949
-$gray: #E5E5E5
+$gray: #D5D5D5
 $white: #FAFAFA
 $black: #333333
 
@@ -53,8 +55,60 @@ p
   font-family: "Source-Regular"
 
 body
-  background-color: $white
+  background-color: darken($white, 5%)
   color: $black
+
+header.page-header
+  height: 8em
+  vertical-align: top
+  background-color: $white
+  border-bottom: 1px solid $gray
+  padding: 0 2em 0 2em
+  box-shadow: 0em 0.1em 0.5em 0em rgba($black, 0.1)
+
+  img#logo
+    display: block
+    margin: 0 auto
+  a#menu
+    +adjust-font-size-to($font-size)
+    position: fixed
+    left: 2.5em
+    top: 2.5em
+    background: $blue
+    width: 3em
+    height: 3em
+    border-radius: 50%
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba($black, 0.75)
+    span
+      position: relative
+      display: block
+      top: 50%
+      left: 50%
+      width: 1.75em
+      height: 0.25em
+      background: $white
+      content: " "
+      +transform(translate( -50%, -50%))
+    span:after
+      position: absolute
+      display: block
+      top: 200%
+      width: 1.75em
+      height: 0.25em
+      background: $white
+      content: " "
+    span:before
+      display: block
+      position: absolute
+      top: -200%
+      width: 1.75em
+      height: 0.25em
+      background: $white
+      content: " "
+  a#menu:hover
+    background: darken($blue, 10%)
+
+
 
 main.page-main
   +display-flex(flex)
@@ -62,16 +116,20 @@ main.page-main
   +justify-content(flex-end)
 
   margin: 1em auto
-  width: 50em
+  width: 100%
+  max-width: 65em
+
+  padding: 0 0 0 0.5em
+div.article-container
+  +flex(0 0 33.33333%)
 
 
 
 
 article
   margin: 0.5em 0.5em 0.5em 0
-  background: darken($white, 5%)
-  width: 24em
-  display: inline-block
+  background: $white
+  width: inherit
   box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
   +transition-property(box-shadow)
   +transition-duration(150ms)
@@ -102,24 +160,41 @@ article
     left: 50%
     +translate(-50%, -50%)
 
-  h1.article-title
-    background: rgba(white, 0.75)
+  div.article-info
     position: absolute
-    bottom: 0
+    bottom: -3em
     left: 0
-    display: inline-block
-    width: 100%
-    padding: 0 0.5em 0 0.5em
-    +padding-leader(0.5, $font-size*$h1)
-    +adjust-font-size-to($font-size*$h1)
-    +padding-trailer(0.5, $font-size*$h1)
-    +transition-property(padding)
+    display:block
+    background: rgba(white, 0.75)
+    +transition-property(bottom)
     +transition-duration(150ms)
 
+    h1.article-title
+      display: inline-block
+      width: 100%
+      padding: 0 0.5em 0 0.5em
+      +padding-leader(0.5, $font-size*$h1)
+      +adjust-font-size-to($font-size*$h1)
+      +padding-trailer(0.5, $font-size*$h1)
+
+
+    p.article-author
+      padding: 0 1em 0 1em
+      +padding-leader(0.5, $font-size)
+      +padding-trailer(0.5, $font-size)
+      background: none
+      display: inline-block
+      span
+        font-weight: 600
+    p.article-date
+      background: none
+      display: inline-block
+
+
 article:hover
-  h1.article-title
-    +padding-trailer(1.5, $font-size*2)
-    +transition-property(padding)
+  div.article-info
+    bottom: 0
+    +transition-property(bottom)
     +transition-delay(500ms)
     +transition-duration(200ms)
     +transition-timing-function(ease-in)
@@ -128,16 +203,30 @@ article
   main.article-main
     position: relative
     width: inherit
-    display: block
+    +display-flex(flex)
+    +flex-flow(column wrap)
+    +justify-content(flex-end)
+
+    p.article-abstract
+      +flex(1)
+      width: inherit
+      padding: 0 1em 0 1em
+      font-family: "Poly-Regular"
+      +padding-leader(1.5, $font-size)
+      +adjust-font-size-to($font-size)
+      +padding-trailer(1.5, $font-size)
+      &:after
+        content: '\2026'
+
 
     a.article-link
+      align-self: flex-end
       padding: 0 1em 0 1em
       margin: 0 1.5em 1em 1.5em
-      +padding-leader(0.25, $font-size*0.75)
-      +padding-trailer(0.25, $font-size*0.75)
+      +padding-leader(0.125, $font-size*0.75)
+      +padding-trailer(0.125, $font-size*0.75)
       border: 1.5px solid $black
       color: $black
-      background: none
       display: inline-block
     a.article-link:hover
       color: $white
@@ -155,7 +244,7 @@ article
       border-radius: 50%
       box-shadow: 0em 0.1em 0.4em -0.05em rgba($black, 0.75)
       &.topic-cpe
-        background: $blue
+        background: $green
       &.topic-cgp
         background: $pink
       &.topic-asso
@@ -171,30 +260,3 @@ article
         text-align: center
       &:hover
         background: darken($blue, 5%)
-
-
-
-    p.article-abstract
-      display: block
-      width: inherit
-      padding: 0 1em 0 1em
-      font-family: "Poly-Regular"
-      +padding-leader(1.5, $font-size)
-      +adjust-font-size-to($font-size)
-      +padding-trailer(1.5, $font-size)
-      &:after
-        content: '\2026'
-
-  footer.article-footer
-    background: darken($gray , 5%)
-
-    ul.article-social
-      padding: 0.5em 1em 0 1em
-      li
-        display: inline-block
-        text-align: center
-        a
-          display: inline-block
-          font-family: "Lato-Medium"
-          color: #333333
-          text-decoration: none
