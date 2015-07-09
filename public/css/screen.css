@@ -1,8 +1,5 @@
 @charset "UTF-8";
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* Compass */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,6 +47,7 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
+/* Global */
 @font-face {
   font-family: "Lato-Medium";
   src: url('/fonts/lato/Lato-Medium.ttf?1427206712') format('truetype'); }
@@ -62,6 +60,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @font-face {
   font-family: "Poly-Regular";
   src: url('/fonts/poly/Poly-Regular.otf?1370347994') format('opentype'); }
+@font-face {
+  font-family: "Poly-Italic";
+  src: url('/fonts/poly/Poly-Italic.otf?1370347994') format('opentype'); }
 html {
   font-size: 100%;
   line-height: 1.5em; }
@@ -73,7 +74,7 @@ h1, h2, h3 {
   font-family: "Lato-Bold"; }
 
 h1 {
-  font-size: 28px; }
+  font-size: 24px; }
 
 a {
   text-decoration: none;
@@ -82,80 +83,446 @@ a {
   line-height: 2em; }
 
 p {
-  font-family: "Source-Regular"; }
+  font-family: "Poly-Regular"; }
 
-body {
+/* Badges Layout */
+a.badge.badge-topic {
+  color: #FAFAFA; }
+  a.badge.badge-topic span {
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+    text-align: center;
+    line-height: 3em; }
+  a.badge.badge-topic.topic-cpe {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-cpe:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+  a.badge.badge-topic.topic-irc {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-irc:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+  a.badge.badge-topic.topic-eti {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-eti:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+  a.badge.badge-topic.topic-cgp {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-cgp:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+  a.badge.badge-topic.topic-asso {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-asso:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+  a.badge.badge-topic.topic-3a {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-3a:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+  a.badge.badge-topic.topic-4a {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-4a:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+  a.badge.badge-topic.topic-5a {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-5a:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+  a.badge.badge-topic.topic-campus {
+    font-size: 1em;
+    line-height: 1.5em;
+    background: #ec2949;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+    a.badge.badge-topic.topic-campus:hover {
+      box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+      -moz-transition-property: box-shadow;
+      -o-transition-property: box-shadow;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+      -moz-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -moz-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in; }
+
+a.badge#menu {
+  font-size: 1em;
+  line-height: 1.5em;
+  background: #1aadd9;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -moz-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  position: fixed;
+  z-index: 9999;
+  left: 2.5em;
+  top: 2.5em; }
+  a.badge#menu:hover {
+    box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 250ms;
+    -o-transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+  @media screen and (max-width: 50em) {
+    a.badge#menu {
+      top: 1.5em;
+      left: 1.5em; } }
+  a.badge#menu span, a.badge#menu span:after, a.badge#menu span:before {
+    display: block;
+    border-radius: 1px;
+    background: #FAFAFA;
+    content: " "; }
+  a.badge#menu span {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 1.75em;
+    height: 0.25em;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  a.badge#menu span:before {
+    position: absolute;
+    top: -200%;
+    width: 1.75em;
+    height: 0.25em; }
+  a.badge#menu span:after {
+    position: absolute;
+    top: 200%;
+    width: 1.75em;
+    height: 0.25em; }
+
+/* Page Layout */
+body.page {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #ededed;
   color: #333333; }
 
 header.page-header {
   height: 8em;
-  vertical-align: top;
   background-color: #FAFAFA;
   border-bottom: 1px solid #D5D5D5;
-  padding: 0 2em 0 2em;
   box-shadow: 0em 0.1em 0.5em 0em rgba(51, 51, 51, 0.1); }
-  header.page-header img#logo {
-    display: block;
-    margin: 0 auto; }
-  header.page-header a#menu {
-    font-size: 1em;
-    line-height: 1.5em;
-    position: fixed;
-    left: 2.5em;
-    top: 2.5em;
-    background: #1aadd9;
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-    box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75); }
-    header.page-header a#menu span {
-      position: relative;
-      display: block;
-      top: 50%;
-      left: 50%;
-      width: 1.75em;
-      height: 0.25em;
-      background: #FAFAFA;
-      content: " ";
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
-    header.page-header a#menu span:after {
-      position: absolute;
-      display: block;
-      top: 200%;
-      width: 1.75em;
-      height: 0.25em;
-      background: #FAFAFA;
-      content: " "; }
-    header.page-header a#menu span:before {
-      display: block;
-      position: absolute;
-      top: -200%;
-      width: 1.75em;
-      height: 0.25em;
-      background: #FAFAFA;
-      content: " "; }
-  header.page-header a#menu:hover {
-    background: #1589ab; }
 
 main.page-main {
+  -webkit-flex: 1;
+  flex: 1;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-  margin: 1em auto;
-  width: 100%;
-  max-width: 65em;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  margin: 1em 7.5em 0 7.5em;
+  max-width: 75em;
   padding: 0 0 0 0.5em; }
+  @media screen and (min-width: 95em) {
+    main.page-main {
+      margin: 1em auto; } }
+  @media screen and (max-width: 50em) {
+    main.page-main {
+      margin: 1em auto; } }
 
+footer.page-footer {
+  display: block;
+  min-height: 4em;
+  border-top: 1px solid #999999;
+  text-align: center;
+  background: #afafaf; }
+
+/* Articles layout */
 div.article-container {
-  -webkit-flex: 0 0 33.33333%;
-  flex: 0 0 33.33333%; }
+  -webkit-flex: 0 0 50%;
+  flex: 0 0 50%; }
+  @media screen and (max-width: 60em) {
+    div.article-container {
+      -webkit-flex: 0 0 100%;
+      flex: 0 0 100%; } }
+  @media screen and (min-width: 80em) {
+    div.article-container {
+      -webkit-flex: 0 0 33.3333%;
+      flex: 0 0 33.3333%; } }
 
 article {
   margin: 0.5em 0.5em 0.5em 0;
@@ -174,22 +541,12 @@ article {
   -o-transition-timing-function: ease-in;
   -webkit-transition-timing-function: ease-in;
   transition-timing-function: ease-in; }
-  article header.article-header {
-    position: relative;
-    height: 16em;
-    overflow: hidden; }
-  article a.article-full {
-    position: absolute;
-    border: #333333 1px solid;
-    color: #333333;
-    display: inline-block;
-    padding: 0 1em 0 1em;
-    right: 1em;
-    bottom: -4em; }
-    article a.article-full:hover {
-      color: #FEFEFE;
-      background: #333333; }
-  article img.article-img {
+
+article header.article-header {
+  position: relative;
+  height: 16em;
+  overflow: hidden; }
+  article header.article-header img.article-img {
     display: inline-block;
     position: relative;
     top: 50%;
@@ -198,57 +555,25 @@ article {
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
-  article div.article-info {
+  article header.article-header div.article-info {
     position: absolute;
     bottom: -3em;
     left: 0;
-    background: rgba(255, 255, 255, 0.75);
-    -moz-transition-property: bottom;
-    -o-transition-property: bottom;
-    -webkit-transition-property: bottom;
-    transition-property: bottom;
-    -moz-transition-duration: 150ms;
-    -o-transition-duration: 150ms;
-    -webkit-transition-duration: 150ms;
-    transition-duration: 150ms; }
-    article div.article-info h1.article-title {
+    display: block;
+    background: rgba(255, 255, 255, 0.75); }
+    article header.article-header div.article-info h1.article-title {
       display: inline-block;
       width: 100%;
       padding: 0 0.5em 0 0.5em;
-      padding-top: 0.42857em;
-      font-size: 1.75em;
-      line-height: 1.71429em;
-      padding-bottom: 0.42857em; }
-    article div.article-info p.article-author {
+      padding-top: 0.5em;
+      font-size: 1.5em;
+      line-height: 2em;
+      padding-bottom: 0.5em; }
+    article header.article-header div.article-info p.article-date {
+      display: inline-block;
       padding: 0 1em 0 1em;
       padding-top: 0.75em;
-      padding-bottom: 0.75em;
-      background: none;
-      display: inline-block; }
-      article div.article-info p.article-author span {
-        font-weight: 600; }
-    article div.article-info p.article-date {
-      background: none;
-      display: inline-block; }
-
-article:hover div.article-info {
-  bottom: 0;
-  -moz-transition-property: bottom;
-  -o-transition-property: bottom;
-  -webkit-transition-property: bottom;
-  transition-property: bottom;
-  -moz-transition-delay: 500ms;
-  -o-transition-delay: 500ms;
-  -webkit-transition-delay: 500ms;
-  transition-delay: 500ms;
-  -moz-transition-duration: 200ms;
-  -o-transition-duration: 200ms;
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  transition-timing-function: ease-in; }
+      padding-bottom: 0.75em; }
 
 article main.article-main {
   position: relative;
@@ -264,7 +589,6 @@ article main.article-main {
     flex: 1;
     width: inherit;
     padding: 0 1em 0 1em;
-    font-family: "Poly-Regular";
     padding-top: 2.25em;
     font-size: 1em;
     line-height: 1.5em;
@@ -274,38 +598,51 @@ article main.article-main {
   article main.article-main a.article-link {
     align-self: flex-end;
     padding: 0 1em 0 1em;
-    margin: 0 1.5em 1em 1.5em;
+    margin: 0 1.5em 1.5em 1.5em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
-    border: 1.5px solid #333333;
+    border-radius: 0.5em;
+    border: 1px solid #333333;
     color: #333333;
     display: inline-block; }
   article main.article-main a.article-link:hover {
     color: #FAFAFA;
     background: #333333; }
-  article main.article-main span.topic {
+  article main.article-main a.badge {
     position: absolute;
+    display: block;
     top: -1.5em;
-    right: 1em;
-    background: #1aadd9;
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-    box-shadow: 0em 0.1em 0.4em -0.05em rgba(51, 51, 51, 0.75); }
-    article main.article-main span.topic.topic-cpe {
-      background: #aace1b; }
-    article main.article-main span.topic.topic-cgp {
-      background: #ec2949; }
-    article main.article-main span.topic.topic-asso {
-      background: #aace1b; }
-    article main.article-main span.topic a {
-      color: #FAFAFA;
-      font-size: 1em;
-      line-height: 1.5em;
-      line-height: 3em;
-      display: inline-block;
-      width: inherit;
-      height: inherit;
-      text-align: center; }
-    article main.article-main span.topic:hover {
-      background: #179bc2; }
+    right: 1em; }
+
+article:hover div.article-info {
+  bottom: 0;
+  -moz-transition-property: bottom;
+  -o-transition-property: bottom;
+  -webkit-transition-property: bottom;
+  transition-property: bottom;
+  -moz-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in; }
+
+header.page-header img#logo {
+  display: block;
+  margin: 0 auto; }
+
+footer.page-footer p {
+  margin: 0 0.5em 0 0.5em;
+  padding-top: 1.5em;
+  font-size: 0.75em;
+  line-height: 2em;
+  padding-bottom: 1.5em;
+  color: #666666; }
+  footer.page-footer p span {
+    font-family: "Poly-Italic"; }
+footer.page-footer quote:before {
+  content: "«"; }
+footer.page-footer quote:after {
+  content: "»"; }

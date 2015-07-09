@@ -1,0 +1,45 @@
+
+@import compass/reset
+@import compass/typography
+@import compass/css3
+
++font-face("Lato-Medium", font-files("lato/Lato-Medium.ttf"))
++font-face("Lato-Regular", font-files("lato/Lato-Regular.ttf"))
++font-face("Lato-Bold", font-files("lato/Lato-Bold.ttf"))
++font-face("Poly-Regular", font-files("poly/Poly-Regular.otf"))
++font-face("Poly-Italic", font-files("poly/Poly-Italic.otf"))
+
+$font-size : 16px
+$line-height: 24px
+
+$h1: 1.5
+
+$break-large: 80em
+$break-small: 40em
+
+$blue: #1aadd9
+$orange: #ed8200
+$green: #aace1b
+$pink: #ec2949
+$gray: #D5D5D5
+$white: #FAFAFA
+$black: #333333
+
++establish-baseline($font-size)
+
+*
+  box-sizing: border-box
+
+h1, h2, h3
+  font-family: "Lato-Bold"
+
+h1
+  font-size: $h1 * $font-size
+
+a
+  text-decoration: none
+  font-family: "Lato-Medium"
+  +adjust-font-size-to(0.75*$font-size)
+
+p
+  font-family: "Poly-Regular"

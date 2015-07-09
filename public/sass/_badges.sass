@@ -1,0 +1,79 @@
+=badge($size, $color)
+  +adjust-font-size-to($font-size)
+  background: $color
+  width: $size
+  height: $size
+  border-radius: 50%
+  box-shadow: 0em 0.2em 0.4em -0.1em rgba($black, 0.75)
+  +transition-property(box-shadow)
+  +transition-duration(150ms)
+  +transition-timing-function(ease-in)
+  &:hover
+    box-shadow: 0em 0.2em 0.8em -0.1em rgba($black, 0.75)
+    +transition-property(box-shadow)
+    +transition-duration(250ms)
+    +transition-timing-function(ease-in)
+
+a.badge
+  &.badge-topic
+    color: $white
+    span
+      width: inherit
+      height: inherit
+      display: inline-block
+      text-align: center
+      line-height: 3em
+
+    &.topic-cpe
+      +badge(3em, $pink)
+    &.topic-irc
+      +badge(3em, $pink)
+    &.topic-eti
+      +badge(3em, $pink)
+    &.topic-cgp
+      +badge(3em, $pink)
+    &.topic-asso
+      +badge(3em, $pink)
+    &.topic-3a
+      +badge(3em, $pink)
+    &.topic-4a
+      +badge(3em, $pink)
+    &.topic-5a
+      +badge(3em, $pink)
+    &.topic-campus
+      +badge(3em, $pink)
+
+
+a.badge
+  &#menu
+    +badge(3em, $blue)
+    position: fixed
+    z-index: 9999
+    left: 2.5em
+    top: 2.5em
+    @media screen and (max-width: $break-small + 10em)
+      top: 1.5em
+      left: 1.5em
+
+    span, span:after, span:before
+      display: block
+      border-radius: 1px
+      background: $white
+      content: " "
+    span
+      position: relative
+      top: 50%
+      left: 50%
+      width: 1.75em
+      height: 0.25em
+      +transform(translate( -50%, -50%))
+    span:before
+      position: absolute
+      top: -200%
+      width: 1.75em
+      height: 0.25em
+    span:after
+      position: absolute
+      top: 200%
+      width: 1.75em
+      height: 0.25em

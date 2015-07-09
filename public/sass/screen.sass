@@ -1,262 +1,44 @@
-/*
-  Welcome to Compass.
-  In this file you should write your main styles. (or centralize your imports)
-  Import this file using the following HTML or equivalent:
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
+/* Compass
 @import compass/reset
 @import compass/typography
 @import compass/css3
 
+/*
+  Global
+@import global
 
+/// images mixin
 
-+font-face("Lato-Medium", font-files("lato/Lato-Medium.ttf"))
-+font-face("Lato-Regular", font-files("lato/Lato-Regular.ttf"))
-+font-face("Lato-Bold", font-files("lato/Lato-Bold.ttf"))
-+font-face("Poly-Regular", font-files("poly/Poly-Regular.otf"))
+@import images
 
-$font-size : 16px
-$line-height: 24px
+/*
+  Badges Layout
+@import badges
 
-$h1: 1.75
+/*
+  Page Layout
+@import page
 
-$break-large: 65em
-$break-small: 32.5em
-
-$blue: #1aadd9
-$orange: #ed8200
-$green: #aace1b
-$pink: #ec2949
-$gray: #D5D5D5
-$white: #FAFAFA
-$black: #333333
-
-+establish-baseline($font-size)
-
-*
-  box-sizing: border-box
-
-
-@import header
-@import article
-
-h1, h2, h3
-  font-family: "Lato-Bold"
-
-h1
-  font-size: $h1 * $font-size
-
-a
-  text-decoration: none
-  font-family: "Lato-Medium"
-  +adjust-font-size-to(0.75*$font-size)
-
-p
-  font-family: "Source-Regular"
-
-body
-  background-color: darken($white, 5%)
-  color: $black
+/*
+  Articles layout
+@import articles
 
 header.page-header
-  height: 8em
-  vertical-align: top
-  background-color: $white
-  border-bottom: 1px solid $gray
-  padding: 0 2em 0 2em
-  box-shadow: 0em 0.1em 0.5em 0em rgba($black, 0.1)
-
   img#logo
     display: block
     margin: 0 auto
-  a#menu
-    +adjust-font-size-to($font-size)
-    position: fixed
-    left: 2.5em
-    top: 2.5em
-    background: $blue
-    width: 3em
-    height: 3em
-    border-radius: 50%
-    box-shadow: 0em 0.2em 0.4em -0.1em rgba($black, 0.75)
+
+footer.page-footer
+  p
     span
-      position: relative
-      display: block
-      top: 50%
-      left: 50%
-      width: 1.75em
-      height: 0.25em
-      background: $white
-      content: " "
-      +transform(translate( -50%, -50%))
-    span:after
-      position: absolute
-      display: block
-      top: 200%
-      width: 1.75em
-      height: 0.25em
-      background: $white
-      content: " "
-    span:before
-      display: block
-      position: absolute
-      top: -200%
-      width: 1.75em
-      height: 0.25em
-      background: $white
-      content: " "
-  a#menu:hover
-    background: darken($blue, 10%)
-
-
-
-main.page-main
-  +display-flex(flex)
-  +flex-flow(row wrap)
-  +justify-content(flex-end)
-
-  margin: 1em auto
-  width: 100%
-  max-width: 65em
-
-  padding: 0 0 0 0.5em
-div.article-container
-  +flex(0 0 33.33333%)
-
-
-
-
-article
-  margin: 0.5em 0.5em 0.5em 0
-  background: $white
-  width: inherit
-  box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
-  +transition-property(box-shadow)
-  +transition-duration(150ms)
-  +transition-timing-function(ease-in)
-
-  header.article-header
-    position: relative
-    height: 16em
-    overflow: hidden
-
-  a.article-full
-    position: absolute
-    border: $black 1px solid
-    color: $black
-    display: inline-block
-    padding: 0 1em 0 1em
-    right: 1em
-    bottom: -4em
-    &:hover
-      color: #FEFEFE
-      background: #333333
-
-
-  img.article-img
-    display: inline-block
-    position: relative
-    top: 50%
-    left: 50%
-    +translate(-50%, -50%)
-
-  div.article-info
-    position: absolute
-    bottom: -3em
-    left: 0
-    display:block
-    background: rgba(white, 0.75)
-    +transition-property(bottom)
-    +transition-duration(150ms)
-
-    h1.article-title
-      display: inline-block
-      width: 100%
-      padding: 0 0.5em 0 0.5em
-      +padding-leader(0.5, $font-size*$h1)
-      +adjust-font-size-to($font-size*$h1)
-      +padding-trailer(0.5, $font-size*$h1)
-
-
-    p.article-author
-      padding: 0 1em 0 1em
-      +padding-leader(0.5, $font-size)
-      +padding-trailer(0.5, $font-size)
-      background: none
-      display: inline-block
-      span
-        font-weight: 600
-    p.article-date
-      background: none
-      display: inline-block
-
-
-article:hover
-  div.article-info
-    bottom: 0
-    +transition-property(bottom)
-    +transition-delay(500ms)
-    +transition-duration(200ms)
-    +transition-timing-function(ease-in)
-
-article
-  main.article-main
-    position: relative
-    width: inherit
-    +display-flex(flex)
-    +flex-flow(column wrap)
-    +justify-content(flex-end)
-
-    p.article-abstract
-      +flex(1)
-      width: inherit
-      padding: 0 1em 0 1em
-      font-family: "Poly-Regular"
-      +padding-leader(1.5, $font-size)
-      +adjust-font-size-to($font-size)
-      +padding-trailer(1.5, $font-size)
-      &:after
-        content: '\2026'
-
-
-    a.article-link
-      align-self: flex-end
-      padding: 0 1em 0 1em
-      margin: 0 1.5em 1em 1.5em
-      +padding-leader(0.125, $font-size*0.75)
-      +padding-trailer(0.125, $font-size*0.75)
-      border: 1.5px solid $black
-      color: $black
-      display: inline-block
-    a.article-link:hover
-      color: $white
-      background: $black
-
-
-
-    span.topic
-      position: absolute
-      top: -1.5em
-      right: 1em
-      background: $blue
-      width: 3em
-      height: 3em
-      border-radius: 50%
-      box-shadow: 0em 0.1em 0.4em -0.05em rgba($black, 0.75)
-      &.topic-cpe
-        background: $green
-      &.topic-cgp
-        background: $pink
-      &.topic-asso
-        background: $green
-
-      a
-        color: $white
-        +adjust-font-size-to($font-size)
-        line-height: 3em
-        display: inline-block
-        width: inherit
-        height: inherit
-        text-align: center
-      &:hover
-        background: darken($blue, 5%)
+      font-family: "Poly-Italic"
+    margin: 0 0.5em 0 0.5em
+    +padding-leader(1, $font-size)
+    +adjust-font-size-to($font-size * 0.75)
+    +padding-trailer(1, $font-size)
+    color: lighten($black, 20%)
+  quote:before
+    content: '\AB'
+  quote:after
+    content: '\BB'
