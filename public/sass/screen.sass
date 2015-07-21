@@ -4,17 +4,20 @@
 @import compass/typography
 @import compass/css3
 
+
+
+
 /*
   Global
 @import global
 
 /// images mixin
-
 @import images
 
 /*
   Badges Layout
 @import badges
+@import buttons
 
 /*
   Page Layout
@@ -22,7 +25,155 @@
 
 /*
   Articles layout
-@import articles
+//@import articles
+
+article.page__article:not(:last-of-type)
+  margin-bottom: 0.5em
+
+article.page__article:last-of-type
+  margin-bottom: 1em
+
+article.page__article
+  background: $white
+  box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
+  width: inherit
+  +display-flex(flex)
+  aside
+    width: 14em
+    height: 14em
+    overflow: hidden
+    img
+      +center
+  section
+    +flex(1)
+    +display-flex(flex)
+    +flex-direction(column)
+    header
+      +align-self(flex-start)
+      +display-flex(flex)
+      width: 100%
+      h1
+        +flex(1)
+        padding: 0 0.75em 0 0.75em
+        +padding-leader(0.5, $font-size*$h1)
+        +adjust-font-size-to($font-size*$h1)
+        +padding-trailer(0.25, $font-size*$h1)
+      a
+        +align-self(flex-end)
+        margin: 1em 1em 0 0
+    main
+      +flex(1)
+      p
+        text-indent: 3em
+        padding: 0 1em 0 1em
+        +padding-leader(0.75, $font-size)
+        +padding-trailer(0.75, $font-size)
+    footer
+
+      padding: 0 1em 0 0.5em
+      margin: 0
+      +padding-leader(0.5, $font-size)
+      +padding-trailer(0.5, $font-size)
+      color: $black
+      +display-flex(flex)
+
+      +flex-direction(row)
+      button
+        +button($black, $white)
+        +align-self(flex-end)
+        text-transform: uppercase
+        text-decoration: none
+        color: $black
+        margin: 0
+        font-weight: 500
+      button:hover
+        background: rgba($black, 0.1)
+        cursor: hand
+
+
+      a[rel=author]
+        +align-self(flex-start)
+        +flex(1)
+      time
+        padding: 0 0.5em 0 0.5em
+        +align-self(flex-start)
+        font-size: 0.75 * $font-size
+        color: rgba($black, 0.5)
+        font-family: "Lato"
+
+aside
+  article.edito
+    background: $white
+    box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
+    width: inherit
+    margin-top: 3em
+    background: white
+    +flex(1)
+    +display-flex(flex)
+    +flex-direction(column)
+    header.edito__header
+      +align-self(flex-start)
+      +display-flex(flex)
+      +flex-direction(column)
+      width: 100%
+      h1
+        display: block
+        font-family: "Lobster"
+        color: darken($pink, 15%)
+        text-align: center
+        padding: 0 0.75em 0 0.75em
+        +padding-leader(0.5, $font-size*$h1)
+        +adjust-font-size-to($font-size*$h1)
+        +padding-trailer(0.25, $font-size*$h1)
+      time
+        padding: 0 0.5em 0 0.5em
+        width: 100%
+        +flex(1)
+        text-align: center
+        font-size: 0.75 * $font-size
+        color: rgba($black, 0.5)
+        font-family: "Lato"
+    main.edito__main
+      +flex(1)
+      p
+        text-indent: 3em
+        padding: 0 1em 0 1em
+        +padding-leader(0.75, $font-size)
+        +padding-trailer(0.75, $font-size)
+
+
+
+//article#edito
+  header#edito__header
+    h1#edito__title
+
+
+
+
+body
+  +display-flex(flex)
+  +flex-direction(column)
+div.page
+  +flex(1)
+  background: rgba($black, 0.1)
+  +display-flex(flex)
+  aside.page__aside
+    margin: 0 1em 0 0.5em
+    +flex(0 0 20em)
+  nav.page__nav
+    +flex(0 0 4em)
+    +order(-1)
+    margin: 0 0.5em 0 1em
+  main.page__main
+    margin: 0 0.5em 0 0
+    +flex(0 0 1)
+
+section.page__section
+  margin: 0 0 1em 0
+  width: 100%
+  header.page__section__header
+    +padding-leader(0.5, $font-size)
+    +padding-trailer(0.5, $font-size)
 
 header.page-header
   img#logo
@@ -31,13 +182,13 @@ header.page-header
 
 footer.page-footer
   p
-    span
-      font-family: "Poly-Italic"
     margin: 0 0.5em 0 0.5em
     +padding-leader(1, $font-size)
     +adjust-font-size-to($font-size * 0.75)
     +padding-trailer(1, $font-size)
     color: lighten($black, 20%)
+    span
+      font-family: "Poly-Italic"
   quote:before
     content: '\AB'
   quote:after

@@ -1,0 +1,18 @@
+=button($foreground, $background)
+  background: none
+  padding: 0 1em 0 1em
+  margin: 0 1.5em 1.5em 1.5em
+  +padding-leader(0.125, $font-size*0.75)
+  +padding-trailer(0.125, $font-size*0.75)
+  border: none
+  color: $foreground
+  display: inline-block
+
+  +transition-property(background, color)
+  +transition-duration(150ms)
+
+  &:hover
+    color: $foreground
+    +transition-property(background, color)
+    +transition-duration(150ms)
+    +transition-timing-function(ease-in)

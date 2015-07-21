@@ -1,94 +1,187 @@
-div.article-container
-  +flex(0 0 50%)
-  @media screen and (max-width: $break-small+ 20em)
-    +flex(0 0 100%)
-  @media screen and (min-width: $break-large)
-    +flex(0 0 33.3333%)
+
+
+
+
+
+
+
+
+article:not(:last-of-type)
+  margin-bottom: 0.5em
+
+article:last-of-type
+  margin-bottom: 1em
 
 article
-  margin: 0.5em 0.5em 0.5em 0
   background: $white
-  width: inherit
   box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
-
-  +transition-property(box-shadow)
-  +transition-duration(150ms)
-  +transition-timing-function(ease-in)
-
-article
-  header.article-header
-    position: relative
-    height: 16em
+  width: inherit
+  +display-flex(flex)
+  aside
+    width: 14em
+    height: 14em
     overflow: hidden
-
-    img.article-img
-      +center()
-
-    div.article-info
-      position: absolute
-      bottom: -3em
-      left: 0
-      display: block
-      background: rgba(white, 0.75)
-
-      h1.article-title
-        display: inline-block
-        width: 100%
-        padding: 0 0.5em 0 0.5em
+    img
+      +center
+  section
+    +flex(1)
+    +display-flex(flex)
+    +flex-direction(column)
+    header
+      +align-self(flex-start)
+      +display-flex(flex)
+      width: 100%
+      h1
+        +flex(1)
+        padding: 0 0.75em 0 0.75em
         +padding-leader(0.5, $font-size*$h1)
         +adjust-font-size-to($font-size*$h1)
-        +padding-trailer(0.5, $font-size*$h1)
-
-      p.article-date
-
-        display: inline-block
-        padding: 0 1em 0 1em
-        +padding-leader(0.5, $font-size)
-        +padding-trailer(0.5, $font-size)
-
-article
-  main.article-main
-    position: relative
-    width: inherit
-    +display-flex(flex)
-    +flex-flow(column wrap)
-    +justify-content(flex-end)
-
-    p.article-abstract
+        +padding-trailer(0.25, $font-size*$h1)
+      a
+        +align-self(flex-end)
+        margin: 1em 1em 0 0
+    main
       +flex(1)
-      width: inherit
-      padding: 0 1em 0 1em
-      +padding-leader(1.5, $font-size)
-      +adjust-font-size-to($font-size)
-      +padding-trailer(1.5, $font-size)
-      &:after
-        content: '\2026'
-
-
-    a.article-link
-      align-self: flex-end
-      padding: 0 1em 0 1em
-      margin: 0 1.5em 1.5em 1.5em
-      +padding-leader(0.125, $font-size*0.75)
-      +padding-trailer(0.125, $font-size*0.75)
-      border-radius: 0.5em
-      border: 1px solid $black
+      p
+        text-indent: 3em
+        padding: 0 1em 0 1em
+        +padding-leader(0.75, $font-size)
+        +padding-trailer(0.75, $font-size)
+    footer
+      padding: 0 1em 0 0.5em
+      margin: 0
+      +padding-leader(0.5, $font-size)
+      +padding-trailer(0.5, $font-size)
       color: $black
-      display: inline-block
+      +display-flex(flex)
+      +flex-direction(row)
+      button
+        +button($black, $white)
+        +align-self(flex-end)
+        text-transform: uppercase
+        text-decoration: none
+        color: $black
+        margin: 0
+        font-weight: 500
+      button:hover
+        background: rgba($black, 0.1)
+      a[rel=author]
+        +align-self(flex-start)
+        +flex(1)
+      time
+        padding: 0 0.5em 0 0.5em
+        +align-self(flex-start)
+        font-size: 0.75 * $font-size
+        color: rgba($black, 0.5)
+        font-family: "Lato"
 
-    a.article-link:hover
-      color: $white
-      background: $black
+  article#edito
+    margin-top: 3em
+    background: white
+    +display-flex(flex)
+    +flex-direction(column)
+    header
+      +align-self(flex-start)
+      width: 100%
+      h1
+        font-family: "Lobster1.3"
+        color: darken($pink, 15%)
+        text-align: center
+        padding: 0 0.75em 0 0.75em
+        +padding-leader(0.5, $font-size*$h1)
+        +adjust-font-size-to($font-size*$h1)
+        +padding-trailer(0.25, $font-size*$h1)
 
-    a.badge
-      position: absolute
-      display: block
-      top: -1.5em
-      right: 1em
+    main
+      p
+        text-indent: 2.5em
+        padding: 0 1em 0 1em
+        +padding-leader(0.25, $font-size)
+        +padding-trailer(0.75, $font-size)
 
-article:hover
-  div.article-info
-    bottom: 0
-    +transition-property(bottom)
-    +transition-duration(250ms)
-    +transition-timing-function(ease-in)
+// div.article-card-container
+//   +flex(0 0 50%)
+//   @media screen and (max-width: $break-small+ 20em)
+//     +flex(0 0 100%)
+//   @media screen and (min-width: $break-large)
+//     +flex(0 0 33.3333%)
+//
+// div.article-container
+//   width: 40em
+//
+//
+// article
+//   margin: 0.5em 0.5em 0.5em 0
+//   background: $white
+//   width: inherit
+//   box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
+//
+//   +transition-property(box-shadow)
+//   +transition-duration(150ms)
+//   +transition-timing-function(ease-in)
+//
+// article.article-card
+//   header.article-header
+//     position: relative
+//     height: 16em
+//     overflow: hidden
+//
+//     img.article-img
+//       +center()
+//
+//     div.article-info
+//       position: absolute
+//       bottom: -3em
+//       left: 0
+//       display: block
+//       background: rgba(white, 0.75)
+//
+//       h1.article-title
+//         display: inline-block
+//         width: 100%
+//         padding: 0 0.5em 0 0.5em
+//         +padding-leader(0.5, $font-size*$h1)
+//         +adjust-font-size-to($font-size*$h1)
+//         +padding-trailer(0.5, $font-size*$h1)
+//
+//       p.article-date
+//
+//         display: inline-block
+//         padding: 0 1em 0 1em
+//         +padding-leader(0.5, $font-size)
+//         +padding-trailer(0.5, $font-size)
+//
+//   main.article-main
+//     position: relative
+//     width: inherit
+//     +display-flex(flex)
+//     +flex-flow(column wrap)
+//     +justify-content(flex-end)
+//
+//     p.article-abstract
+//       +flex(1)
+//       width: inherit
+//       padding: 0 1em 0 1em
+//       +padding-leader(1.5, $font-size)
+//       +adjust-font-size-to($font-size)
+//       +padding-trailer(1.5, $font-size)
+//       &:after
+//         content: '\2026'
+//
+//
+//     a.article-link
+//       align-self: flex-end
+//       +button($black, $white)
+//
+//     a.badge
+//       position: absolute
+//       display: block
+//       top: -1.5em
+//       right: 1em
+//
+// article.article-card:hover
+//   div.article-info
+//     bottom: 0
+//     +transition-property(bottom)
+//     +transition-duration(250ms)
+//     +transition-timing-function(ease-in)

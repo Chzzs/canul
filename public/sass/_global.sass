@@ -8,6 +8,7 @@
 +font-face("Lato-Bold", font-files("lato/Lato-Bold.ttf"))
 +font-face("Poly-Regular", font-files("poly/Poly-Regular.otf"))
 +font-face("Poly-Italic", font-files("poly/Poly-Italic.otf"))
++font-face("Lobster", font-files("lobster/Lobster.otf"))
 
 $font-size : 16px
 $line-height: 24px
@@ -30,11 +31,14 @@ $black: #333333
 *
   box-sizing: border-box
 
-h1, h2, h3
-  font-family: "Lato-Bold"
-
 h1
+  font-family: "Lato-Bold"
   font-size: $h1 * $font-size
+
+h2
+  font-family: "Lato-Medium"
+  font-size: $font-size
+  color: darken($gray, 15%)
 
 a
   text-decoration: none
