@@ -4,9 +4,6 @@
 @import compass/typography
 @import compass/css3
 
-
-
-
 /*
   Global
 @import global
@@ -17,76 +14,132 @@
 /*
   Badges Layout
 @import badges
+
 @import buttons
+
+
 
 /*
   Page Layout
 @import page
 
+
 /*
   Articles layout
 //@import articles
 
-article.page__article:not(:last-of-type)
+//article.page-article:not(:last-of-type)
   margin-bottom: 0.5em
 
-article.page__article:last-of-type
-  margin-bottom: 1em
 
-article.page__article
+  margin: 0 0.25em 0 0.25em 1em
+  box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
+
+
+
+
+article.page-article
+  z-index: 0
   background: $white
   box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
-  width: inherit
+  margin: 0 0.5em 1em 0.5em
+
+  +transition-property(box-shadow, margin)
+  +transition-duration(250ms)
+  +transition-timing-function(ease-in)
+
+  +flex(1)
   +display-flex(flex)
-  aside
+
+  aside.image-holder
     width: 14em
-    height: 14em
+    height: 16em
     overflow: hidden
+    opacity: 1
     img
       +center
+  aside.badge-holder
+    width: 4em
+    background: rgba($gray, 0.25)
+    border-left: 1px rgba($gray, 0.75) solid
+    padding: 0 0.5em 0 0.5em
+    +padding-leader(0.5, $font-size*$h1)
+    +padding-trailer(0.5, $font-size*$h1)
+    +display-flex(flex)
+    +flex-direction(column)
+    a.badge
+      &.pink
+        +badge(3em, $pink)
+      &.blue
+        +badge(3em, $blue)
+      &.green
+        +badge(3em, $green)
+    a.badge:not(:last-of-type)
+      margin-bottom: -2.5em
+      +transition-property(margin)
+      +transition-duration(50ms)
+      +transition-timing-function(ease-in)
+
+  aside.badge-holder:hover
+    a.badge:not(:last-of-type)
+      margin-bottom: 0.5em
+      +transition-property(margin)
+      +transition-duration(150ms)
+      +transition-timing-function(ease-in)
+
   section
     +flex(1)
     +display-flex(flex)
     +flex-direction(column)
-    header
+    header.section-header
       +align-self(flex-start)
       +display-flex(flex)
       width: 100%
       h1
         +flex(1)
+        text-transform: uppercase
         padding: 0 0.75em 0 0.75em
-        +padding-leader(0.5, $font-size*$h1)
+        +padding-leader(1, $font-size*$h1)
         +adjust-font-size-to($font-size*$h1)
-        +padding-trailer(0.25, $font-size*$h1)
-      a
-        +align-self(flex-end)
-        margin: 1em 1em 0 0
-    main
+        +padding-trailer(0.5, $font-size*$h1)
+        a:visited
+          color: $black
+      &:hover
+        cursor: hand
+    main.section-main
       +flex(1)
-      p
-        text-indent: 3em
+
+      p.abstract
+        text-indent: 1em
         padding: 0 1em 0 1em
-        +padding-leader(0.75, $font-size)
-        +padding-trailer(0.75, $font-size)
-    footer
+        +padding-leader(0.0625, $font-size)
+        +padding-trailer(0.125, $font-size)
+
+      p.abstract::after
+        content: '\2026'
+
+
+
+    footer.section-footer
 
       padding: 0 1em 0 0.5em
       margin: 0
-      +padding-leader(0.5, $font-size)
-      +padding-trailer(0.5, $font-size)
+      +padding-leader(0.25, $font-size)
+      +padding-trailer(0.25, $font-size)
       color: $black
       +display-flex(flex)
 
+
       +flex-direction(row)
-      button
+      a.btn
         +button($black, $white)
         +align-self(flex-end)
         text-transform: uppercase
+        content: 'lire la suite'
         text-decoration: none
         color: $black
-        margin: 0
         font-weight: 500
-      button:hover
+      a.btn:hover
         background: rgba($black, 0.1)
         cursor: hand
 
@@ -94,12 +147,17 @@ article.page__article
       a[rel=author]
         +align-self(flex-start)
         +flex(1)
+
       time
         padding: 0 0.5em 0 0.5em
         +align-self(flex-start)
         font-size: 0.75 * $font-size
         color: rgba($black, 0.5)
         font-family: "Lato"
+
+
+
+
 
 aside
   article.edito
@@ -111,7 +169,7 @@ aside
     +flex(1)
     +display-flex(flex)
     +flex-direction(column)
-    header.edito__header
+    header.edito-header
       +align-self(flex-start)
       +display-flex(flex)
       +flex-direction(column)
@@ -133,7 +191,7 @@ aside
         font-size: 0.75 * $font-size
         color: rgba($black, 0.5)
         font-family: "Lato"
-    main.edito__main
+    main.edito-main
       +flex(1)
       p
         text-indent: 3em
@@ -157,23 +215,25 @@ div.page
   +flex(1)
   background: rgba($black, 0.1)
   +display-flex(flex)
-  aside.page__aside
+  aside.page-aside
     margin: 0 1em 0 0.5em
     +flex(0 0 20em)
-  nav.page__nav
+  nav.page-nav
     +flex(0 0 4em)
     +order(-1)
     margin: 0 0.5em 0 1em
-  main.page__main
+  main.page-main
     margin: 0 0.5em 0 0
     +flex(0 0 1)
 
-section.page__section
+section.page-section
   margin: 0 0 1em 0
   width: 100%
-  header.page__section__header
+  header.page-section-header
     +padding-leader(0.5, $font-size)
     +padding-trailer(0.5, $font-size)
+  +display-flex(flex)
+  +flex-direction(column)
 
 header.page-header
   img#logo
@@ -193,3 +253,77 @@ footer.page-footer
     content: '\AB'
   quote:after
     content: '\BB'
+
+
+/*
+  &.active
+    margin: 0
+
+    z-index: 1
+    box-shadow: 0em 0.1em 2em -0.05em rgba($black, 0.75)
+
+    +transition-property(box-shadow, margin, padding)
+    +transition-duration(250ms)
+    +transition-timing-function(ease-in)
+
+    aside.image-holder
+      +transition-property(opacity, width)
+      +transition-duration(250ms)
+      +transition-timing-function(ease-in)
+      opacity: 0
+      width: 0
+
+    section
+      header.section-header
+        h1
+          +padding-leader(1, $font-size*$h1)
+          +padding-trailer(0.5, $font-size*$h1)
+          +transition-property(padding)
+          +transition-duration(250ms)
+          +transition-delay(250ms)
+
+          +transition-timing-function(ease-in)
+      main.section-main
+        p.abstract
+          display: none
+        div.content
+          display: block
+          opacity: 1
+          height: 100%
+          +transition-property(opacity)
+          +transition-duration(500ms)
+          +transition-delay(500ms)
+          +transition-timing-function(ease-in)
+
+          padding: 0 2em 0 2em
+          +padding-leader(0.0625, $font-size)
+          +padding-trailer(0.125, $font-size)
+          p
+            padding: 0 1em 0 1em
+            +padding-leader(0.5, $font-size)
+            +padding-trailer(0.5, $font-size)
+          h2
+            color: $black
+            font-size: $font-size * 1.5
+            +padding-trailer(0.5, 1.5*$font-size)
+            +padding-leader(0.5, 1.5*$font-size)
+          p.callout
+            display: block
+            +adjust-font-size-to($font-size * 1.75)
+
+            +padding-trailer(0.25, $font-size*1.75)
+            +padding-leader(0.25, $font-size*1.75)
+            margin: 0 2em 0 2em
+            +trailer(0.5, $font-size*1.75)
+            +leader(0.5, $font-size*1.75)
+            display: block
+            border-top: 1px rgba($gray, 0.75) solid
+            border-bottom: 1px rgba($gray, 0.75) solid
+          // background: rgba($gray, 0.25)
+
+
+          p.callout::before
+            content: '\AB'
+          p.callout::after
+            content: '\BB'
+      footer.section-footer

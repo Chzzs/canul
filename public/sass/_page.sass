@@ -12,10 +12,6 @@ body
   background-color: darken($white, 5%)
   color: $black
 
-
-div.page
-
-
 header.page-header
   height: 8em
 
@@ -23,21 +19,18 @@ header.page-header
   border-bottom: 1px solid $gray
   box-shadow: 0em 0.1em 0.5em 0em rgba($black, 0.1)
 
-main.page__main
+main.page-main
   +align-self(center)
   +display-flex(flex)
   +flex-flow(column wrap)
   +justify-content(flex-start)
 
-  margin: 1em 7.5em 0 7.5em
+  margin: 1em 7.5em 1em 7.5em
   @media screen and (min-width: 95em)
     margin: 1em auto
   @media screen and (max-width: $break-small + 10em)
     margin: 1em auto
-
   max-width: 75em
-  padding: 0 0 0 0.5em
-
 footer.page-footer
   display: block
 
