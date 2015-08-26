@@ -1,0 +1,36 @@
+<section class="page-section">
+  <header class="page-section-header">
+    <h2>À la une de cette <time datetime="2015-W30">semaine</time></h2>
+  </header>
+  <ul>
+  <!--  <li ng-repeat="article in filtered = ( articles | filter : search )"> -->
+    <li ng-repeat="article in articles">
+      <article class="page-article">
+        <aside class="image-holder">
+          <img src="" alt="simpsons">
+        </aside>
+        <section>
+          <header class="section-header">
+            <h1 class="page__article__title"><a href="">{{article.title}}</a></h1>
+          </header>
+          <main class="section-main">
+            <p class="abstract">
+              {{article.abstract}}
+          </main>
+          <footer class="section-footer">
+            <time pubdate="2015-07-14">{{article.date | mediumTime}}</time>
+            <a href="#" rel="author">{{article.author}}</a>
+            <a href="#" class="btn">Lire la suite</a>
+          </footer>
+        </section>
+        <aside class="badge-holder">
+          <a class="badge badge-topic pink" href="#"><span>{{article.topics[0]}}</span></a>
+
+        </aside>
+      </article>
+
+
+
+    </li>
+  </ul>
+</section>

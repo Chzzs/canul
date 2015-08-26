@@ -1,56 +1,30 @@
-<html>
+<html ng-app="canul" ng-controlller="MainController">
   <head>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/screen.css" media="screen" charset="utf-8">
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="js/index.js"></script>
+    <script src="js/services.js"></script>
+
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
     <header class="page-header">
-      <a class="badge" id="menu" href="#"><span></span></a>
       <img id="logo" src="images/logo170x128-3.png" alt="le canul">
     </header>
     <div class="page">
-      <main class="page-main">
-        <section class="page-section">
-          <header class="page-section-header">
-            <h2>À la une de cette <time datetime="2015-W30">semaine</time></h2>
-          </header>
-              <article class="page-article">
-                <aside class="image-holder">
-                  <img src="http://ls.rosselcdn.net/sites/default/files/imagecache/475x317/2013/08/29/1663884790_B97945015Z.1_20130829120126_000_G241630KG.1-0.jpg" alt="simpsons">
-                </aside>
-                <section>
-                  <header class="section-header">
-                    <h1 class="page__article__title"><a href="">Faut-il venir en amphi la première semaine ?</a></h1>
-                  </header>
-                  <main class="section-main">
-                    <p class="abstract">Laissant le mois d’aout biafiner ses coups de soleil embarrassants,
-                      septembre pointe le bout de son foie avec son lot de doutes et d’interrogations.
-                      Même pas le temps de poser les valises que nos esprits sont déjà dans la tourmente: dois-je vraiment assister à la première semaine d’amphi?</p>
-                  </main>
-                  <footer class="section-footer">
-                    <time pubdate="2015-07-14">14 juillet 2015</time>
-                    <a href="#" rel="author">Author</a>
-                    <a href="#" class="btn">Lire la suite</a>
-                  </footer>
-                </section>
-                <aside class="badge-holder">
-                  <a class="badge badge-topic pink" href="#"><span>CPE</span></a>
-                </aside>
-              </article>
-
-        </section>
-        <section class="page-section">
-          <header class="page-section-header">
-            <h2>Archive de cette année</h2>
-            <time datetime="2015"></time>
-          </header>
-        </section>
+      <main class="page-main" ng-view>
 
       </main>
       <nav class="page-nav">
+        <a class="badge" id="menu" href="#"><span></span></a>
       </nav>
       <aside class="page-aside">
         <article class="edito">

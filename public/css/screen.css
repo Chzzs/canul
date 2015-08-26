@@ -410,6 +410,41 @@ a.badge.badge-topic {
       -webkit-transition-timing-function: ease-in;
       transition-timing-function: ease-in; }
 
+a.badge.search {
+  font-size: 1em;
+  line-height: 1.5em;
+  background: #ec2949;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -moz-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in; }
+  a.badge.search:hover {
+    box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -moz-transition-duration: 250ms;
+    -o-transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in; }
+
 a.badge#menu {
   font-size: 1em;
   line-height: 1.5em;
@@ -523,7 +558,7 @@ footer.page-footer {
 article.page-article {
   z-index: 0;
   background: #FAFAFA;
-  box-shadow: 0em 0.1em 0.5em -0.05em rgba(51, 51, 51, 0.75);
+  box-shadow: 0em 0.1em 0.5em -0.05em rgba(51, 51, 51, 0.5);
   margin: 0 0.5em 1em 0.5em;
   -moz-transition-property: box-shadow, margin;
   -o-transition-property: box-shadow, margin;

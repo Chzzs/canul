@@ -1,0 +1,1 @@
+angular.module("canul").directive("canulArticle",function(){return{restrict:"E",templateUrl:"templates/directives/canul-article.html",scope:{name:"=",id:"=",url:"="}}});

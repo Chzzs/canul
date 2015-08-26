@@ -1,0 +1,1 @@
+angular.module("canul",["ngRoute"]).config(function(e){e.when("/articles",{templateUrl:"templates/pages/index.html",controller:"IndexController"}).when("/articles/:id",{templateUrl:"templates/pages/show.html",controller:"ShowController"}).otherwise({redirectTo:"/articles"})});

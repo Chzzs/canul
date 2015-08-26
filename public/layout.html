@@ -1,22 +1,217 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/screen.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/css/screen.css" media="screen" charset="utf-8">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
-    <header>
-      <img src="images/logo170x128-3.png" alt="le canul">
+    <header class="page-header">
+      <img id="logo" src="images/logo170x128-3.png" alt="le canul">
     </header>
-    <main>
-      <article>
-        <p>article</p>
-      </article>
-      <article>
-        <p>article</p>
-      </article>
-      <article>
-        <p>article</p>
-      </article>
-    </main>
+    <div class="page">
+      <main class="page-main">
+        <section class="page-section">
+          <header class="page-section-header">
+            <h2>À la une de cette <time datetime="2015-W30">semaine</time></h2>
+          </header>
+              <article class="page-article">
+                <aside class="image-holder">
+                  <img src="http://ls.rosselcdn.net/sites/default/files/imagecache/475x317/2013/08/29/1663884790_B97945015Z.1_20130829120126_000_G241630KG.1-0.jpg" alt="simpsons">
+                </aside>
+                <section>
+                  <header class="section-header">
+                    <h1 class="page__article__title"><a href="">Faut-il venir en amphi la première semaine ?</a></h1>
+                  </header>
+                  <main class="section-main">
+                    <p class="abstract">Laissant le mois d’aout biafiner ses coups de soleil embarrassants,
+                      septembre pointe le bout de son foie avec son lot de doutes et d’interrogations.
+                      Même pas le temps de poser les valises que nos esprits sont déjà dans la tourmente: dois-je vraiment assister à la première semaine d’amphi?</p>
+                  </main>
+                  <footer class="section-footer">
+                    <time pubdate="2015-07-14">14 juillet 2015</time>
+                    <a href="#" rel="author">Author</a>
+                    <a href="#" class="btn">Lire la suite</a>
+                  </footer>
+                </section>
+                <aside class="badge-holder">
+                  <a class="badge badge-topic pink" href="#"><span>CPE</span></a>
+                </aside>
+              </article>
+
+        </section>
+        <section class="page-section">
+          <header class="page-section-header">
+            <h2>Archive de cette année</h2>
+            <time datetime="2015"></time>
+          </header>
+        </section>
+
+      </main>
+      <nav class="page-nav">
+        <a class="badge" id="menu" href="#"><span></span></a>
+        <a class="badge search" href="#"><span>Salut</span></a>
+      </nav>
+      <aside class="page-aside">
+        <article class="edito">
+          <header class="edito-header">
+            <h1 class="edito-title">Editorial</h1>
+            <time pubdate="01/09/2015">Septembre 2015</time>
+          </header>
+          <main class="edito-main">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </main>
+        </article>
+      </aside>
+    </div>
+    <footer class="page-footer">
+      <p><quote><span>Le Canul</span>, le premier journal polynomial du second degré.</quote> – J.M. Becker</p>
+    </footer>
   </body>
+  <script>
+    $(document).ready(function() {
+      $trigger = function() {
+        event.preventDefault();
+        $article = $(this).parents("article.page-article");
+
+        if($article.hasClass("active")) {
+          $(".page-article").each( function() {
+            $(this).removeClass("active");
+
+          })
+        } else {
+          $(".page-article").each( function() {
+            $(this).removeClass("active");
+          })
+          $article.addClass("active");
+        }
+
+
+      }
+
+      $("h1").on("click", $trigger);
+      $("a.btn").on("click", $trigger);
+
+    });
+  </script>
 </html>
+<!--
+
+-->
+
+<!--
+<article class="page-article">
+  <aside class="image-holder">
+    <img src="http://ls.rosselcdn.net/sites/default/files/imagecache/475x317/2013/08/29/1663884790_B97945015Z.1_20130829120126_000_G241630KG.1-0.jpg" alt="simpsons">
+  </aside>
+  <section>
+    <header class="section-header">
+      <h1 class="page__article__title"><a href="">Faut-il venir en amphi la première semaine ?</a></h1>
+    </header>
+    <main class="section-main">
+      <p class="abstract">Laissant le mois d’aout biafiner ses coups de soleil embarrassants,
+        septembre pointe le bout de son foie avec son lot de doutes et d’interrogations.
+        Même pas le temps de poser les valises que nos esprits sont déjà dans la tourmente: dois-je vraiment assister à la première semaine d’amphi?</p></main>
+    <footer class="section-footer">
+      <time pubdate="2015-07-14">14 juillet 2015</time>
+      <a href="#" rel="author">Author</a>
+      <a href="#" class="btn">Lire la suite</a>
+    </footer>
+  </section>
+  <aside class="badge-holder">
+    <a class="badge badge-topic" href="#"><span>CPE</span></a>
+  </aside>
+</article>
+<article class="page-article active">
+  <aside class="image-holder">
+    <img src="http://ls.rosselcdn.net/sites/default/files/imagecache/475x317/2013/08/29/1663884790_B97945015Z.1_20130829120126_000_G241630KG.1-0.jpg" alt="simpsons">
+  </aside>
+  <section>
+    <header class="section-header">
+      <h1 class="page__article__title"><a href="">Faut-il venir en amphi la première semaine ?</a></h1>
+    </header>
+    <main class="section-main">
+      <p class="abstract">Laissant le mois d’aout biafiner ses coups de soleil embarrassants,
+        septembre pointe le bout de son foie avec son lot de doutes et d’interrogations.
+        Même pas le temps de poser les valises que nos esprits sont déjà dans la tourmente: dois-je vraiment assister à la première semaine d’amphi?</p>
+      <div class="content">
+        <p>Laissant le mois d’aout biafiner ses coups de soleil embarrassants, septembre pointe le bout de son foie avec son lot de doutes et d’interrogations. Même pas le temps de poser les valises que nos esprits sont déjà dans la tourmente : dois-je vraiment assister à la première semaine d’amphi. Question trop souvent posée mais si peu éludée, la rédaction s’est penché sur la question.</p>
+        <p class="callout">Trop souvent posée mais si peu éludée, la rédaction s’est penché sur la question.</p>
+
+        <h2>Une transition en douceur</h2>
+        <p>“La première semaine c’est vraiment de la merde !” voici le genre d’élucubration stérile que l’on peut entendre autour d’une bière entre 18h et 22h. “Faux” vous diras n’importe quel psychiatre un temps soit peu acheté par la rédaction. “Les étudiants qui subissent un retour brutal à des amphis importants peinent à prendre le rythme et ratent le coche des premieres partiels.” nous confirma le notre. Venir à la première semaine de la rentrée c’est assurer une transition en douceur entre une inactivité cérébrale de vacancier et une inactivité cérébrale d’élève-ingénieur. Assister aux premiers amphi n’a pas de prix, rien de plus agréable pour notre cortex engourdi de pouvoir opérer une écoute proche de zéro sans aucun remords (source de stress). Notre conseil : Il faut venir ! Cette semaine d’amphi est indispensable pour dormir, discuter avec votre voisin ou jouer à Clash of Clan le coeur léger, c’est bon pour le moral et ça ne durera pas.</p>
+        <h2>La semaine la plus ennuyante</h2>
+        <p>“La première semaine c’est vraiment génial !” voici le genre d’autogalvanisation naive que l’on peut entendre autour de la machine à café aux alentours de 7h40. Et bien il est vrai que si vous aimez écouter des banalités confondantes ou que vous faites la collection de feuilles A4 (ou les deux) il est possible que vous preniez votre pied cette semaine. Pour tous les autres, ça va être chiant à mourrir. Il parait aberrant de pouvoir souscrire à la semaine la plus ennuyante de l’année alors que l’on sort tout juste de la période excitante des vacances d’été. Il est certain que ce reliquat de cours inflige un sérieux coup à la réputation des amphis pour le reste de l’année. Mettez-y les pieds cette semaine et ça vous passera l’envie de retenter l’experience. Notre conseil : Restez chez vous ! Réfléchissez à long terme, ne vous dégoutez pas tout de suite et attendez une semaine que le pire soit passé et attaquez seulement le meilleur.</p>
+      </div>
+    </main>
+    <footer class="section-footer">
+      <time pubdate="2015-07-14">14 juillet 2015</time>
+      <a href="#" rel="author">Author</a>
+      <a href="#" class="btn">Fermer</a>
+    </footer>
+  </section>
+  <aside class="badge-holder">
+    <a class="badge badge-topic" href="#"><span>CPE</span></a>
+  </aside>
+</article>
+<article class="page-article">
+  <aside class="image-holder">
+    <img src="http://ls.rosselcdn.net/sites/default/files/imagecache/475x317/2013/08/29/1663884790_B97945015Z.1_20130829120126_000_G241630KG.1-0.jpg" alt="simpsons">
+  </aside>
+  <section>
+    <header class="section-header">
+      <h1 class="page__article__title"><a href="">Faut-il venir en amphi la première semaine ?</a></h1>
+    </header>
+    <main class="section-main">
+      <p class="abstract">Laissant le mois d’aout biafiner ses coups de soleil embarrassants,
+        septembre pointe le bout de son foie avec son lot de doutes et d’interrogations.
+        Même pas le temps de poser les valises que nos esprits sont déjà dans la tourmente: dois-je vraiment assister à la première semaine d’amphi?</p></main>
+    <footer class="section-footer">
+      <time pubdate="2015-07-14">14 juillet 2015</time>
+      <a href="#" rel="author">Author</a>
+      <a href="#" class="btn">Lire la suite</a>
+    </footer>
+  </section>
+  <aside class="badge-holder">
+    <a class="badge badge-topic" href="#"><span>CPE</span></a>
+  </aside>
+</article>
+<article class="page-article">
+  <aside class="image-holder">
+    <img src="http://ls.rosselcdn.net/sites/default/files/imagecache/475x317/2013/08/29/1663884790_B97945015Z.1_20130829120126_000_G241630KG.1-0.jpg" alt="simpsons">
+  </aside>
+  <section>
+    <header class="section-header">
+      <h1 class="page__article__title"><a href="">Faut-il venir en amphi la première semaine ?</a></h1>
+    </header>
+    <main class="section-main">
+      <p class="abstract">Laissant le mois d’aout biafiner ses coups de soleil embarrassants,
+        septembre pointe le bout de son foie avec son lot de doutes et d’interrogations.
+        Même pas le temps de poser les valises que nos esprits sont déjà dans la tourmente: dois-je vraiment assister à la première semaine d’amphi?</p></main>
+    <footer class="section-footer">
+      <time pubdate="2015-07-14">14 juillet 2015</time>
+      <a href="#" rel="author">Author</a>
+      <a href="#" class="btn">Lire la suite</a>
+    </footer>
+  </section>
+  <aside class="badge-holder">
+    <a class="badge badge-topic" href="#"><span>CPE</span></a>
+  </aside>
+</article>
+
+
+
+ <article class="article-card">
+    <header class="article-header">
+      <img class="article-img" src="http://lorempicsum.com/futurama/800/400/2" alt="finding nemo">
+      <div class="article-info">
+        <h1 class="article-title">Pénurie de papier: les TPs MatLab sont en cause</h1>
+        <p class="article-date">ajouté le <span> 12/12/12</span></p>
+      </div>
+    </header>
+    <main class="article-main">
+      <a class="badge badge-topic topic-cpe" href="#"><span>CPE</span></a>
+      <p class="article-abstract">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque itaque accusantium necessitatibus veniam, sequi</p>
+      <a class="article-link" href="#">Lire la suite&hellip;</a>
+    </main>
+  </article> -->
