@@ -5,3 +5,4 @@ public/config.codekit
 public/bower_components/
 node_modules/
 .database/
+public/.codekit-cache
