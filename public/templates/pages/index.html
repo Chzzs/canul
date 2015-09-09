@@ -5,32 +5,28 @@
   <ul>
   <!--  <li ng-repeat="article in filtered = ( articles | filter : search )"> -->
     <li ng-repeat="article in articles">
-      <article class="page-article">
+      <article class="article short">
         <aside class="image-holder">
           <img src="" alt="simpsons">
         </aside>
         <section>
           <header class="section-header">
-            <h1 class="page__article__title"><a href="">{{article.title}}</a></h1>
+            <h1 class="page__article__title"><a ng-href="#/articles/{{article._id}}">{{article.title}}</a></h1>
           </header>
           <main class="section-main">
             <p class="abstract">
               {{article.abstract}}
           </main>
           <footer class="section-footer">
-            <time pubdate="2015-07-14">{{article.date | mediumTime}}</time>
+            <time pubdate="1441704486000">{{ 1441704486000  | date:'shortDate' }}</time>
             <a href="#" rel="author">{{article.author}}</a>
-            <a href="#" class="btn">Lire la suite</a>
+            <a ng-href="#/articles/{{article._id}}" class="btn">Lire la suite</a>
           </footer>
         </section>
         <aside class="badge-holder">
           <a class="badge badge-topic pink" href="#"><span>{{article.topics[0]}}</span></a>
-
         </aside>
       </article>
-
-
-
     </li>
   </ul>
 </section>

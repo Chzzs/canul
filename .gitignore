@@ -2,3 +2,6 @@ config.codekit
 .DS_Store
 config.rb
 public/config.codekit
+public/bower_components/
+node_modules/
+.database/

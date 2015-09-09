@@ -6,7 +6,7 @@
 
 /*
   Global
-  
+
 @import global
 
 /// images mixin
@@ -39,7 +39,7 @@
 
 
 
-article.page-article
+article.short
   z-index: 0
   background: $white
   box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.5)
@@ -157,16 +157,12 @@ article.page-article
         font-family: "Lato"
 
 
-
-
-
 aside
   article.edito
     background: $white
     box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
     width: inherit
     margin-top: 3em
-    background: white
     +flex(1)
     +display-flex(flex)
     +flex-direction(column)
@@ -256,75 +252,91 @@ footer.page-footer
     content: '\BB'
 
 
-/*
-  &.active
-    margin: 0
 
-    z-index: 1
-    box-shadow: 0em 0.1em 2em -0.05em rgba($black, 0.75)
+article.full
+  background: $white
+  margin: 3em 0 3em 0
+  z-index: 1
+  box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.5)
 
-    +transition-property(box-shadow, margin, padding)
-    +transition-duration(250ms)
-    +transition-timing-function(ease-in)
+  section
+    header.section-header
+      width: 100%
 
-    aside.image-holder
-      +transition-property(opacity, width)
-      +transition-duration(250ms)
-      +transition-timing-function(ease-in)
-      opacity: 0
-      width: 0
+      h1.article-title
+        display: block
+        text-align: center
+        +padding-leader(2.5, $font-size*($h1*2))
+        font-size: $font-size*($h1 * 2)
+        +padding-trailer(1.5, $font-size*($h1*2))
 
-    section
-      header.section-header
-        h1
-          +padding-leader(1, $font-size*$h1)
-          +padding-trailer(0.5, $font-size*$h1)
-          +transition-property(padding)
-          +transition-duration(250ms)
-          +transition-delay(250ms)
-
-          +transition-timing-function(ease-in)
-      main.section-main
-        p.abstract
-          display: none
-        div.content
+    main.section-main
+      p.abstract
+        display: none
+      div.content
+        display: block
+        padding: 0 2em 0 2em
+        +padding-leader(0.0625, $font-size)
+        +padding-trailer(0.125, $font-size)
+        p
+          padding: 0 1em 0 1em
+          +padding-leader(0.5, $font-size)
+          +padding-trailer(0.5, $font-size)
+        h2
+          color: $black
+          font-size: $font-size * 1.5
+          +padding-trailer(0.5, 1.5*$font-size)
+          +padding-leader(0.5, 1.5*$font-size)
+        p.callout
           display: block
-          opacity: 1
-          height: 100%
-          +transition-property(opacity)
-          +transition-duration(500ms)
-          +transition-delay(500ms)
-          +transition-timing-function(ease-in)
+          +adjust-font-size-to($font-size * 1.75)
 
-          padding: 0 2em 0 2em
-          +padding-leader(0.0625, $font-size)
-          +padding-trailer(0.125, $font-size)
-          p
-            padding: 0 1em 0 1em
-            +padding-leader(0.5, $font-size)
-            +padding-trailer(0.5, $font-size)
-          h2
-            color: $black
-            font-size: $font-size * 1.5
-            +padding-trailer(0.5, 1.5*$font-size)
-            +padding-leader(0.5, 1.5*$font-size)
-          p.callout
-            display: block
-            +adjust-font-size-to($font-size * 1.75)
-
-            +padding-trailer(0.25, $font-size*1.75)
-            +padding-leader(0.25, $font-size*1.75)
-            margin: 0 2em 0 2em
-            +trailer(0.5, $font-size*1.75)
-            +leader(0.5, $font-size*1.75)
-            display: block
-            border-top: 1px rgba($gray, 0.75) solid
-            border-bottom: 1px rgba($gray, 0.75) solid
-          // background: rgba($gray, 0.25)
+          +padding-trailer(0.25, $font-size*1.75)
+          +padding-leader(0.25, $font-size*1.75)
+          margin: 0 2em 0 2em
+          +trailer(0.5, $font-size*1.75)
+          +leader(0.5, $font-size*1.75)
+          display: block
+          border-top: 1px rgba($gray, 0.75) solid
+          border-bottom: 1px rgba($gray, 0.75) solid
+        // background: rgba($gray, 0.25)
 
 
-          p.callout::before
-            content: '\AB'
-          p.callout::after
-            content: '\BB'
-      footer.section-footer
+        p.callout::before
+          content: '\AB'
+        p.callout::after
+          content: '\BB'
+    footer.section-footer
+
+      padding: 0 1em 0 0.5em
+      margin: 0
+      +padding-leader(0.25, $font-size)
+      +padding-trailer(0.25, $font-size)
+      color: $black
+      +display-flex(flex)
+
+
+      +flex-direction(row)
+      a.btn
+        +button($black, $white)
+        +align-self(flex-end)
+        text-transform: uppercase
+        content: 'lire la suite'
+        text-decoration: none
+        color: $black
+        font-weight: 500
+      a.btn:hover
+        background: rgba($black, 0.1)
+        cursor: hand
+
+
+      a[rel=author]
+        +align-self(flex-start)
+        +flex(1)
+
+      time
+        padding: 0 0.5em 0 0.5em
+        +align-self(flex-start)
+        font-size: 0.75 * $font-size
+        color: rgba($black, 0.5)
+        font-family: "Lato"

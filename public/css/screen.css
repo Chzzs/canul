@@ -555,7 +555,7 @@ footer.page-footer {
   background: #afafaf; }
 
 /* Articles layout */
-article.page-article {
+article.short {
   z-index: 0;
   background: #FAFAFA;
   box-shadow: 0em 0.1em 0.5em -0.05em rgba(51, 51, 51, 0.5);
@@ -576,12 +576,12 @@ article.page-article {
   flex: 1;
   display: -webkit-flex;
   display: flex; }
-  article.page-article aside.image-holder {
+  article.short aside.image-holder {
     width: 14em;
     height: 16em;
     overflow: hidden;
     opacity: 1; }
-    article.page-article aside.image-holder img {
+    article.short aside.image-holder img {
       display: inline-block;
       position: relative;
       top: 50%;
@@ -590,7 +590,7 @@ article.page-article {
       -ms-transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
-  article.page-article aside.badge-holder {
+  article.short aside.badge-holder {
     width: 4em;
     background: rgba(213, 213, 213, 0.25);
     border-left: 1px rgba(213, 213, 213, 0.75) solid;
@@ -601,7 +601,7 @@ article.page-article {
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column; }
-    article.page-article aside.badge-holder a.badge.pink {
+    article.short aside.badge-holder a.badge.pink {
       font-size: 1em;
       line-height: 1.5em;
       background: #ec2949;
@@ -621,7 +621,7 @@ article.page-article {
       -o-transition-timing-function: ease-in;
       -webkit-transition-timing-function: ease-in;
       transition-timing-function: ease-in; }
-      article.page-article aside.badge-holder a.badge.pink:hover {
+      article.short aside.badge-holder a.badge.pink:hover {
         box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
         -moz-transition-property: box-shadow;
         -o-transition-property: box-shadow;
@@ -635,7 +635,7 @@ article.page-article {
         -o-transition-timing-function: ease-in;
         -webkit-transition-timing-function: ease-in;
         transition-timing-function: ease-in; }
-    article.page-article aside.badge-holder a.badge.blue {
+    article.short aside.badge-holder a.badge.blue {
       font-size: 1em;
       line-height: 1.5em;
       background: #1aadd9;
@@ -655,7 +655,7 @@ article.page-article {
       -o-transition-timing-function: ease-in;
       -webkit-transition-timing-function: ease-in;
       transition-timing-function: ease-in; }
-      article.page-article aside.badge-holder a.badge.blue:hover {
+      article.short aside.badge-holder a.badge.blue:hover {
         box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
         -moz-transition-property: box-shadow;
         -o-transition-property: box-shadow;
@@ -669,7 +669,7 @@ article.page-article {
         -o-transition-timing-function: ease-in;
         -webkit-transition-timing-function: ease-in;
         transition-timing-function: ease-in; }
-    article.page-article aside.badge-holder a.badge.green {
+    article.short aside.badge-holder a.badge.green {
       font-size: 1em;
       line-height: 1.5em;
       background: #aace1b;
@@ -689,7 +689,7 @@ article.page-article {
       -o-transition-timing-function: ease-in;
       -webkit-transition-timing-function: ease-in;
       transition-timing-function: ease-in; }
-      article.page-article aside.badge-holder a.badge.green:hover {
+      article.short aside.badge-holder a.badge.green:hover {
         box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
         -moz-transition-property: box-shadow;
         -o-transition-property: box-shadow;
@@ -703,7 +703,7 @@ article.page-article {
         -o-transition-timing-function: ease-in;
         -webkit-transition-timing-function: ease-in;
         transition-timing-function: ease-in; }
-    article.page-article aside.badge-holder a.badge:not(:last-of-type) {
+    article.short aside.badge-holder a.badge:not(:last-of-type) {
       margin-bottom: -2.5em;
       -moz-transition-property: margin;
       -o-transition-property: margin;
@@ -717,7 +717,7 @@ article.page-article {
       -o-transition-timing-function: ease-in;
       -webkit-transition-timing-function: ease-in;
       transition-timing-function: ease-in; }
-  article.page-article aside.badge-holder:hover a.badge:not(:last-of-type) {
+  article.short aside.badge-holder:hover a.badge:not(:last-of-type) {
     margin-bottom: 0.5em;
     -moz-transition-property: margin;
     -o-transition-property: margin;
@@ -731,20 +731,20 @@ article.page-article {
     -o-transition-timing-function: ease-in;
     -webkit-transition-timing-function: ease-in;
     transition-timing-function: ease-in; }
-  article.page-article section {
+  article.short section {
     -webkit-flex: 1;
     flex: 1;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column; }
-    article.page-article section header.section-header {
+    article.short section header.section-header {
       -webkit-align-self: flex-start;
       align-self: flex-start;
       display: -webkit-flex;
       display: flex;
       width: 100%; }
-      article.page-article section header.section-header h1 {
+      article.short section header.section-header h1 {
         -webkit-flex: 1;
         flex: 1;
         text-transform: uppercase;
@@ -753,21 +753,21 @@ article.page-article {
         font-size: 1.25em;
         line-height: 1.2em;
         padding-bottom: 0.6em; }
-        article.page-article section header.section-header h1 a:visited {
+        article.short section header.section-header h1 a:visited {
           color: #333333; }
-      article.page-article section header.section-header:hover {
+      article.short section header.section-header:hover {
         cursor: hand; }
-    article.page-article section main.section-main {
+    article.short section main.section-main {
       -webkit-flex: 1;
       flex: 1; }
-      article.page-article section main.section-main p.abstract {
+      article.short section main.section-main p.abstract {
         text-indent: 1em;
         padding: 0 1em 0 1em;
         padding-top: 0.09375em;
         padding-bottom: 0.1875em; }
-      article.page-article section main.section-main p.abstract::after {
+      article.short section main.section-main p.abstract::after {
         content: "…"; }
-    article.page-article section footer.section-footer {
+    article.short section footer.section-footer {
       padding: 0 1em 0 0.5em;
       margin: 0;
       padding-top: 0.375em;
@@ -777,7 +777,7 @@ article.page-article {
       display: flex;
       -webkit-flex-direction: row;
       flex-direction: row; }
-      article.page-article section footer.section-footer a.btn {
+      article.short section footer.section-footer a.btn {
         background: none;
         padding: 0 1em 0 1em;
         border: none;
@@ -798,7 +798,7 @@ article.page-article {
         text-decoration: none;
         color: #333333;
         font-weight: 500; }
-        article.page-article section footer.section-footer a.btn:hover {
+        article.short section footer.section-footer a.btn:hover {
           color: #333333;
           -moz-transition-property: background, color;
           -o-transition-property: background, color;
@@ -812,15 +812,15 @@ article.page-article {
           -o-transition-timing-function: ease-in;
           -webkit-transition-timing-function: ease-in;
           transition-timing-function: ease-in; }
-      article.page-article section footer.section-footer a.btn:hover {
+      article.short section footer.section-footer a.btn:hover {
         background: rgba(51, 51, 51, 0.1);
         cursor: hand; }
-      article.page-article section footer.section-footer a[rel=author] {
+      article.short section footer.section-footer a[rel=author] {
         -webkit-align-self: flex-start;
         align-self: flex-start;
         -webkit-flex: 1;
         flex: 1; }
-      article.page-article section footer.section-footer time {
+      article.short section footer.section-footer time {
         padding: 0 0.5em 0 0.5em;
         -webkit-align-self: flex-start;
         align-self: flex-start;
@@ -833,7 +833,6 @@ aside article.edito {
   box-shadow: 0em 0.1em 0.5em -0.05em rgba(51, 51, 51, 0.75);
   width: inherit;
   margin-top: 3em;
-  background: white;
   -webkit-flex: 1;
   flex: 1;
   display: -webkit-flex;
@@ -932,74 +931,108 @@ footer.page-footer quote:before {
 footer.page-footer quote:after {
   content: "»"; }
 
-/* &.active
- *   margin: 0
- *
- *   z-index: 1
- *   box-shadow: 0em 0.1em 2em -0.05em rgba($black, 0.75)
- *
- *   +transition-property(box-shadow, margin, padding)
- *   +transition-duration(250ms)
- *   +transition-timing-function(ease-in)
- *
- *   aside.image-holder
- *     +transition-property(opacity, width)
- *     +transition-duration(250ms)
- *     +transition-timing-function(ease-in)
- *     opacity: 0
- *     width: 0
- *
- *   section
- *     header.section-header
- *       h1
- *         +padding-leader(1, $font-size*$h1)
- *         +padding-trailer(0.5, $font-size*$h1)
- *         +transition-property(padding)
- *         +transition-duration(250ms)
- *         +transition-delay(250ms)
- *
- *         +transition-timing-function(ease-in)
- *     main.section-main
- *       p.abstract
- *         display: none
- *       div.content
- *         display: block
- *         opacity: 1
- *         height: 100%
- *         +transition-property(opacity)
- *         +transition-duration(500ms)
- *         +transition-delay(500ms)
- *         +transition-timing-function(ease-in)
- *
- *         padding: 0 2em 0 2em
- *         +padding-leader(0.0625, $font-size)
- *         +padding-trailer(0.125, $font-size)
- *         p
- *           padding: 0 1em 0 1em
- *           +padding-leader(0.5, $font-size)
- *           +padding-trailer(0.5, $font-size)
- *         h2
- *           color: $black
- *           font-size: $font-size * 1.5
- *           +padding-trailer(0.5, 1.5*$font-size)
- *           +padding-leader(0.5, 1.5*$font-size)
- *         p.callout
- *           display: block
- *           +adjust-font-size-to($font-size * 1.75)
- *
- *           +padding-trailer(0.25, $font-size*1.75)
- *           +padding-leader(0.25, $font-size*1.75)
- *           margin: 0 2em 0 2em
- *           +trailer(0.5, $font-size*1.75)
- *           +leader(0.5, $font-size*1.75)
- *           display: block
- *           border-top: 1px rgba($gray, 0.75) solid
- *           border-bottom: 1px rgba($gray, 0.75) solid
- *         // background: rgba($gray, 0.25)
- *
- *
- *         p.callout::before
- *           content: '\AB'
- *         p.callout::after
- *           content: '\BB'
- *     footer.section-footer */
+article.full {
+  background: #FAFAFA;
+  margin: 3em 0 3em 0;
+  z-index: 1;
+  box-shadow: 0em 0.1em 0.5em -0.05em rgba(51, 51, 51, 0.5); }
+  article.full section header.section-header {
+    width: 100%; }
+    article.full section header.section-header h1.article-title {
+      display: block;
+      text-align: center;
+      padding-top: 1.5em;
+      font-size: 40px;
+      padding-bottom: 0.9em; }
+  article.full section main.section-main p.abstract {
+    display: none; }
+  article.full section main.section-main div.content {
+    display: block;
+    padding: 0 2em 0 2em;
+    padding-top: 0.09375em;
+    padding-bottom: 0.1875em; }
+    article.full section main.section-main div.content p {
+      padding: 0 1em 0 1em;
+      padding-top: 0.75em;
+      padding-bottom: 0.75em; }
+    article.full section main.section-main div.content h2 {
+      color: #333333;
+      font-size: 24px;
+      padding-bottom: 0.5em;
+      padding-top: 0.5em; }
+    article.full section main.section-main div.content p.callout {
+      display: block;
+      font-size: 1.75em;
+      line-height: 1.71429em;
+      padding-bottom: 0.21429em;
+      padding-top: 0.21429em;
+      margin: 0 2em 0 2em;
+      margin-bottom: 0.42857em;
+      margin-top: 0.42857em;
+      display: block;
+      border-top: 1px rgba(213, 213, 213, 0.75) solid;
+      border-bottom: 1px rgba(213, 213, 213, 0.75) solid; }
+    article.full section main.section-main div.content p.callout::before {
+      content: "«"; }
+    article.full section main.section-main div.content p.callout::after {
+      content: "»"; }
+  article.full section footer.section-footer {
+    padding: 0 1em 0 0.5em;
+    margin: 0;
+    padding-top: 0.375em;
+    padding-bottom: 0.375em;
+    color: #333333;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row; }
+    article.full section footer.section-footer a.btn {
+      background: none;
+      padding: 0 1em 0 1em;
+      border: none;
+      color: #333333;
+      display: inline-block;
+      -moz-transition-property: background, color;
+      -o-transition-property: background, color;
+      -webkit-transition-property: background, color;
+      transition-property: background, color;
+      -moz-transition-duration: 150ms;
+      -o-transition-duration: 150ms;
+      -webkit-transition-duration: 150ms;
+      transition-duration: 150ms;
+      -webkit-align-self: flex-end;
+      align-self: flex-end;
+      text-transform: uppercase;
+      content: "lire la suite";
+      text-decoration: none;
+      color: #333333;
+      font-weight: 500; }
+      article.full section footer.section-footer a.btn:hover {
+        color: #333333;
+        -moz-transition-property: background, color;
+        -o-transition-property: background, color;
+        -webkit-transition-property: background, color;
+        transition-property: background, color;
+        -moz-transition-duration: 150ms;
+        -o-transition-duration: 150ms;
+        -webkit-transition-duration: 150ms;
+        transition-duration: 150ms;
+        -moz-transition-timing-function: ease-in;
+        -o-transition-timing-function: ease-in;
+        -webkit-transition-timing-function: ease-in;
+        transition-timing-function: ease-in; }
+    article.full section footer.section-footer a.btn:hover {
+      background: rgba(51, 51, 51, 0.1);
+      cursor: hand; }
+    article.full section footer.section-footer a[rel=author] {
+      -webkit-align-self: flex-start;
+      align-self: flex-start;
+      -webkit-flex: 1;
+      flex: 1; }
+    article.full section footer.section-footer time {
+      padding: 0 0.5em 0 0.5em;
+      -webkit-align-self: flex-start;
+      align-self: flex-start;
+      font-size: 12px;
+      color: rgba(51, 51, 51, 0.5);
+      font-family: "Lato"; }

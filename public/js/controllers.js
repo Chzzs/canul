@@ -10,6 +10,5 @@ angular.module('canul').controller('IndexController', ['$scope', 'Article', func
 angular.module('canul').controller('ShowController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 	$http({method:'GET', url: '/articles/'+ $routeParams.id}).success(function (data) {
 		$scope.article = data;
-
 	});
 }]);

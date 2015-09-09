@@ -10,22 +10,26 @@
 
     <script src="js/index.js"></script>
     <script src="js/services.js"></script>
-
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
     <header class="page-header">
-      <img id="logo" src="images/logo170x128-3.png" alt="le canul">
+      <a href="#/articles">
+        <img id="logo" src="images/logo170x128-3.png" alt="le canul">
+      </a>
     </header>
     <div class="page">
-      <main class="page-main" ng-view>
 
+      <main class="page-main" ng-view>
       </main>
+
       <nav class="page-nav">
         <a class="badge" id="menu" href="#"><span></span></a>
       </nav>
+
       <aside class="page-aside">
         <article class="edito">
           <header class="edito-header">
@@ -37,6 +41,7 @@
           </main>
         </article>
       </aside>
+
     </div>
     <footer class="page-footer">
       <p><quote><span>Le Canul</span>, le premier journal polynomial du second degré.</quote> – J.M. Becker</p>
