@@ -163,6 +163,7 @@ aside
     box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
     width: inherit
     margin-top: 3em
+    margin-bottom: 3em
     +flex(1)
     +display-flex(flex)
     +flex-direction(column)
@@ -191,10 +192,10 @@ aside
     main.edito-main
       +flex(1)
       p
-        text-indent: 3em
         padding: 0 1em 0 1em
-        +padding-leader(0.75, $font-size)
-        +padding-trailer(0.75, $font-size)
+        +padding-leader(0.75, 0.85 *$font-size)
+        +padding-trailer(0.75,0.85 * $font-size)
+        font-size: 0.85*$font-size
 
 
 
@@ -266,7 +267,8 @@ article.full
       h1.article-title
         display: block
         text-align: center
-        +padding-leader(2.5, $font-size*($h1*2))
+        +padding-leader(1.5, $font-size*($h1*2))
+        +adjust-font-size-to($font-size*($h1*2))
         font-size: $font-size*($h1 * 2)
         +padding-trailer(1.5, $font-size*($h1*2))
 

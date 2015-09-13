@@ -3,7 +3,7 @@ var parser = require('body-parser');
 var mongoose = require('mongoose');
 var router = express.Router();
 
-var schema = mongoose.Schema({
+var articleSchema = mongoose.Schema({
   title: String,
   author: String,
   abstract: String,
@@ -17,7 +17,13 @@ var schema = mongoose.Schema({
   topics: [String]
 });
 
-var Article = mongoose.model('Article', schema);
+var editoSchema = mongoose.Schema({
+  date: String,
+  content: String
+});
+
+var Article = mongoose.model('Article', articleSchema);
+var Edito = mongoose.model('Edito', editoSchema);
 
 router.use(parser.json());
 router.use(parser.urlencoded({extended: true}));
@@ -34,6 +40,13 @@ router.get('/articles/:id', function(request, response) {
   query.findOne(function(error, article) {
     if(error) return console.log(error);
     response.status(200).send(article);
+  });
+});
+
+router.get('/edito', function(request, response){
+  Edito.findOne( function(error, edito) {
+    if (error) return console.log(error);
+    response.send(edito);
   });
 });
 

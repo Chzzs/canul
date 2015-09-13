@@ -833,6 +833,7 @@ aside article.edito {
   box-shadow: 0em 0.1em 0.5em -0.05em rgba(51, 51, 51, 0.75);
   width: inherit;
   margin-top: 3em;
+  margin-bottom: 3em;
   -webkit-flex: 1;
   flex: 1;
   display: -webkit-flex;
@@ -870,10 +871,10 @@ aside article.edito {
     -webkit-flex: 1;
     flex: 1; }
     aside article.edito main.edito-main p {
-      text-indent: 3em;
       padding: 0 1em 0 1em;
-      padding-top: 1.125em;
-      padding-bottom: 1.125em; }
+      padding-top: 1.32353em;
+      padding-bottom: 1.32353em;
+      font-size: 13.6px; }
 
 body {
   display: -webkit-flex;
@@ -941,7 +942,9 @@ article.full {
     article.full section header.section-header h1.article-title {
       display: block;
       text-align: center;
-      padding-top: 1.5em;
+      padding-top: 0.9em;
+      font-size: 2.5em;
+      line-height: 1.2em;
       font-size: 40px;
       padding-bottom: 0.9em; }
   article.full section main.section-main p.abstract {
