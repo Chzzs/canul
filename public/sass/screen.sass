@@ -20,6 +20,7 @@
 
 
 
+
 /*
   Page Layout
 @import page
@@ -41,6 +42,8 @@
 
 article.short
   z-index: 0
+
+
   background: $white
   box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.5)
   margin: 0 0.5em 1em 0.5em
@@ -204,8 +207,6 @@ aside
     h1#edito__title
 
 
-
-
 body
   +display-flex(flex)
   +flex-direction(column)
@@ -223,6 +224,7 @@ div.page
   main.page-main
     margin: 0 0.5em 0 0
     +flex(0 0 1)
+    
 
 section.page-section
   margin: 0 0 1em 0
@@ -232,6 +234,8 @@ section.page-section
     +padding-trailer(0.5, $font-size)
   +display-flex(flex)
   +flex-direction(column)
+
+
 
 header.page-header
   img#logo
@@ -251,8 +255,6 @@ footer.page-footer
     content: '\AB'
   quote:after
     content: '\BB'
-
-
 
 article.full
   background: $white
@@ -316,9 +318,8 @@ article.full
       +padding-trailer(0.25, $font-size)
       color: $black
       +display-flex(flex)
-
-
       +flex-direction(row)
+
       a.btn
         +button($black, $white)
         +align-self(flex-end)
@@ -342,3 +343,11 @@ article.full
         font-size: 0.75 * $font-size
         color: rgba($black, 0.5)
         font-family: "Lato"
+
+
+.menu
+  top: 2.5em
+  left: 1.5em
+  position: fixed
+  li
+    margin: 0 0 0.5em 0

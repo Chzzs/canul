@@ -21,3 +21,11 @@ angular.module('canul').directive('canulEdito', function() {
 		templateUrl: 'templates/directives/canul-edito.html'
 	};
 });
+
+angular.module('canul').directive('canulMenu', function() {
+
+	return {
+		restrict: 'E',
+		templateUrl: 'templates/directives/canul-menu.html'
+	};
+});

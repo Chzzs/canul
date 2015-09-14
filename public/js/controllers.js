@@ -17,9 +17,39 @@ angular.module('canul').controller('ShowController', ['$scope', '$http', '$route
 
 /* Editos controllers */
 
-angular.module('canul').controller('EditoController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+angular.module('canul').controller('EditoController', ['$scope', '$http', function($scope, $http) {
 	$http({method:'GET', url: '/edito'}).success(function (data) {
-		console.log(data);
 		$scope.edito = data;
 	});
+}]);
+
+/* Menu controllers */
+
+angular.module('canul').controller('MenuController', ['$scope', function($scope) {
+
+	$scope.items = [];
+	$scope.show = true;
+
+	$scope.toggle = function() {
+		if( $scope.show ) {
+			$scope.append();
+			$scope.menu = "active";
+		}	else {
+			$scope.remove();
+			$scope.menu = "inactive";
+		}
+
+		$scope.show = ! $scope.show;
+
+		console.log($scope.menu);
+	};
+
+	$scope.append = function() {
+		$scope.items = ["filter", "search", "contact"];
+	};
+
+	$scope.remove = function () {
+		$scope.items= [];
+	};
+
 }]);
