@@ -1,4 +1,4 @@
-/* global angular: true */
+/* global angular: true , console: true*/
 
 /* Articles controllers */
 
@@ -18,9 +18,13 @@ angular.module('canul').controller('ShowController', ['$scope', '$http', '$route
 /* Editos controllers */
 
 angular.module('canul').controller('EditoController', ['$scope', '$http', function($scope, $http) {
+	$scope.show = true;
 	$http({method:'GET', url: '/edito'}).success(function (data) {
 		$scope.edito = data;
 	});
+	$scope.toggle = function() {
+		$scope.show = ! $scope.show;
+	};
 }]);
 
 /* Menu controllers */
@@ -29,6 +33,11 @@ angular.module('canul').controller('MenuController', ['$scope', function($scope)
 
 	$scope.items = [];
 	$scope.show = true;
+	$scope.inputs = {
+		"search": "search input",
+		"filter": "filter input",
+		"contact": "contact input"
+	};
 
 	$scope.toggle = function() {
 		if( $scope.show ) {
@@ -40,16 +49,17 @@ angular.module('canul').controller('MenuController', ['$scope', function($scope)
 		}
 
 		$scope.show = ! $scope.show;
-
-		console.log($scope.menu);
 	};
 
 	$scope.append = function() {
 		$scope.items = ["filter", "search", "contact"];
 	};
-
 	$scope.remove = function () {
 		$scope.items= [];
+	};
+	$scope.click = function (item) {
+		console.log(item);
+		console.log(item +  "search for "+ $scope.inputs[item]);
 	};
 
 }]);

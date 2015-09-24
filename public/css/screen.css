@@ -847,6 +847,21 @@ aside article.edito {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column; }
+  aside article.edito nav.edito-nav {
+    text-align: right;
+    padding: 1em 1em 0.5em 1em; }
+    aside article.edito nav.edito-nav a.close {
+      text-align: center;
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 0.75em;
+      cursor: hand;
+      font-size: 16px;
+      font-size: 1em;
+      line-height: 1.5em; }
+    aside article.edito nav.edito-nav a.close:hover {
+      background: rgba(213, 213, 213, 0.5); }
   aside article.edito header.edito-header {
     -webkit-align-self: flex-start;
     align-self: flex-start;
@@ -855,13 +870,13 @@ aside article.edito {
     -webkit-flex-direction: column;
     flex-direction: column;
     width: 100%; }
-    aside article.edito header.edito-header h1 {
+    aside article.edito header.edito-header h1.edito-title {
       display: block;
       font-family: "Lobster";
       color: #b8102c;
       text-align: center;
       padding: 0 0.75em 0 0.75em;
-      padding-top: 0.6em;
+      padding-top: 0.3em;
       font-size: 1.25em;
       line-height: 1.2em;
       padding-bottom: 0.3em; }
@@ -1052,4 +1067,52 @@ article.full {
   left: 1.5em;
   position: fixed; }
   .menu li {
+    display: -webkit-flex;
+    display: flex;
     margin: 0 0 0.5em 0; }
+    .menu li a {
+      width: 3em; }
+    .menu li aside {
+      background: rgba(51, 51, 51, 0.85);
+      margin: 0 0 0 1em;
+      padding: 0.25em;
+      -webkit-align-self: center;
+      align-self: center;
+      -webkit-flex: 1;
+      flex: 1; }
+      .menu li aside input[type=submit] {
+        font-size: 1em;
+        line-height: 1.5em;
+        background: #FAFAFA;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        box-shadow: 0em 0.2em 0.4em -0.1em rgba(51, 51, 51, 0.75);
+        -moz-transition-property: box-shadow;
+        -o-transition-property: box-shadow;
+        -webkit-transition-property: box-shadow;
+        transition-property: box-shadow;
+        -moz-transition-duration: 150ms;
+        -o-transition-duration: 150ms;
+        -webkit-transition-duration: 150ms;
+        transition-duration: 150ms;
+        -moz-transition-timing-function: ease-in;
+        -o-transition-timing-function: ease-in;
+        -webkit-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+        border: none;
+        content: ""; }
+        .menu li aside input[type=submit]:hover {
+          box-shadow: 0em 0.2em 0.8em -0.1em rgba(51, 51, 51, 0.75);
+          -moz-transition-property: box-shadow;
+          -o-transition-property: box-shadow;
+          -webkit-transition-property: box-shadow;
+          transition-property: box-shadow;
+          -moz-transition-duration: 250ms;
+          -o-transition-duration: 250ms;
+          -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+          -moz-transition-timing-function: ease-in;
+          -o-transition-timing-function: ease-in;
+          -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in; }

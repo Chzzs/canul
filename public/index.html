@@ -2,6 +2,7 @@
   <head>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta charset="utf-8">
+
     <link rel="stylesheet" href="/css/screen.css" media="screen" charset="utf-8">
 
     <script src="bower_components/angular/angular.min.js"></script>
@@ -13,7 +14,6 @@
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
     <header class="page-header">
@@ -21,19 +21,14 @@
         <img id="logo" src="images/logo170x128-3.png" alt="le canul">
       </a>
     </header>
-    <div class="page" >
-
-      <main class="page-main" ng-view>
-      </main>
-
+    <div class="page">
+      <main class="page-main" ng-view></main>
       <nav class="page-nav" ng-controller="MenuController">
         <canul-menu></canul-menu>
       </nav>
-
-      <aside class="page-aside" ng-controller="EditoController">
+      <aside class="page-aside" ng-controller="EditoController" ng-show="show">
         <canul-edito></canul-edito>
       </aside>
-
     </div>
     <footer class="page-footer">
       <p><quote><span>Le Canul</span>, le premier journal polynomial du second degré.</quote> – J.M. Becker</p>
