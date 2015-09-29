@@ -4,226 +4,12 @@
 @import compass/typography
 @import compass/css3
 
-/*
-  Global
-
 @import global
-
-/// images mixin
 @import images
-
-/*
-  Badges Layout
 @import badges
-
 @import buttons
-
-
-
-
-/*
-  Page Layout
-@import page
-
-
-/*
-  Articles layout
-//@import articles
-
-//article.page-article:not(:last-of-type)
-  margin-bottom: 0.5em
-
-
-  margin: 0 0.25em 0 0.25em 1em
-  box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
-
-
-
-
-article.short
-  z-index: 0
-
-
-  background: $white
-  box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.5)
-  margin: 0 0.5em 1em 0.5em
-
-  +transition-property(box-shadow, margin)
-  +transition-duration(250ms)
-  +transition-timing-function(ease-in)
-
-  +flex(1)
-  +display-flex(flex)
-
-  aside.image-holder
-    width: 14em
-    height: 16em
-    overflow: hidden
-    opacity: 1
-    img
-      +center
-  aside.badge-holder
-    width: 4em
-    background: rgba($gray, 0.25)
-    border-left: 1px rgba($gray, 0.75) solid
-    padding: 0 0.5em 0 0.5em
-    +padding-leader(0.5, $font-size*$h1)
-    +padding-trailer(0.5, $font-size*$h1)
-    +display-flex(flex)
-    +flex-direction(column)
-    a.badge
-      &.pink
-        +badge(3em, $pink)
-      &.blue
-        +badge(3em, $blue)
-      &.green
-        +badge(3em, $green)
-    a.badge:not(:last-of-type)
-      margin-bottom: -2.5em
-      +transition-property(margin)
-      +transition-duration(50ms)
-      +transition-timing-function(ease-in)
-
-  aside.badge-holder:hover
-    a.badge:not(:last-of-type)
-      margin-bottom: 0.5em
-      +transition-property(margin)
-      +transition-duration(150ms)
-      +transition-timing-function(ease-in)
-
-  section
-    +flex(1)
-    +display-flex(flex)
-    +flex-direction(column)
-    header.section-header
-      +align-self(flex-start)
-      +display-flex(flex)
-      width: 100%
-      h1
-        +flex(1)
-        text-transform: uppercase
-        padding: 0 0.75em 0 0.75em
-        +padding-leader(1, $font-size*$h1)
-        +adjust-font-size-to($font-size*$h1)
-        +padding-trailer(0.5, $font-size*$h1)
-        a:visited
-          color: $black
-      &:hover
-        cursor: hand
-    main.section-main
-      +flex(1)
-
-      p.abstract
-        text-indent: 1em
-        padding: 0 1em 0 1em
-        +padding-leader(0.0625, $font-size)
-        +padding-trailer(0.125, $font-size)
-
-      p.abstract::after
-        content: '\2026'
-
-
-
-    footer.section-footer
-
-      padding: 0 1em 0 0.5em
-      margin: 0
-      +padding-leader(0.25, $font-size)
-      +padding-trailer(0.25, $font-size)
-      color: $black
-      +display-flex(flex)
-
-
-      +flex-direction(row)
-      a.btn
-        +button($black, $white)
-        +align-self(flex-end)
-        text-transform: uppercase
-        content: 'lire la suite'
-        text-decoration: none
-        color: $black
-        font-weight: 500
-      a.btn:hover
-        background: rgba($black, 0.1)
-        cursor: hand
-
-
-      a[rel=author]
-        +align-self(flex-start)
-        +flex(1)
-
-      time
-        padding: 0 0.5em 0 0.5em
-        +align-self(flex-start)
-        font-size: 0.75 * $font-size
-        color: rgba($black, 0.5)
-        font-family: "Lato"
-
-
-aside
-  article.edito
-    background: $white
-    box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.75)
-    width: inherit
-    margin-top: 3em
-    margin-bottom: 3em
-    +flex(1)
-    +display-flex(flex)
-    +flex-direction(column)
-    nav.edito-nav
-      text-align: right
-      padding: 1em 1em 0.5em 1em
-      a.close
-        text-align: center
-        display: inline-block
-        width: 1.5em
-        height: 1.5em
-        border-radius: 0.75em
-        cursor: hand
-        font-size: $font-size
-        +adjust-font-size-to($font-size)
-      a.close:hover
-        background: rgba($gray, 0.5)
-
-
-
-    header.edito-header
-      +align-self(flex-start)
-      +display-flex(flex)
-      +flex-direction(column)
-      width: 100%
-
-      h1.edito-title
-        display: block
-        font-family: "Lobster"
-        color: darken($pink, 15%)
-        text-align: center
-        padding: 0 0.75em 0 0.75em
-        +padding-leader(0.25, $font-size*$h1)
-        +adjust-font-size-to($font-size*$h1)
-        +padding-trailer(0.25, $font-size*$h1)
-      time
-        padding: 0 0.5em 0 0.5em
-        width: 100%
-        +flex(1)
-        text-align: center
-        font-size: 0.75 * $font-size
-        color: rgba($black, 0.5)
-        font-family: "Lato"
-    main.edito-main
-      +flex(1)
-      p
-        padding: 0 1em 0 1em
-        +padding-leader(0.75, 0.85 *$font-size)
-        +padding-trailer(0.75,0.85 * $font-size)
-        font-size: 0.85*$font-size
-
-
-
-//article#edito
-  header#edito__header
-    h1#edito__title
-
+@import articles
+@import editos
 
 body
   +display-flex(flex)
@@ -242,7 +28,7 @@ div.page
   main.page-main
     margin: 0 0.5em 0 0
     +flex(0 0 1)
-
+    margin-right: 6em
 
 section.page-section
   margin: 0 0 1em 0
@@ -254,13 +40,14 @@ section.page-section
   +flex-direction(column)
 
 
-
 header.page-header
   img#logo
     display: block
     margin: 0 auto
 
 footer.page-footer
+  background: darken($white, 20%)
+  text-align: center
   p
     margin: 0 0.5em 0 0.5em
     +padding-leader(1, $font-size)
@@ -273,94 +60,6 @@ footer.page-footer
     content: '\AB'
   quote:after
     content: '\BB'
-
-article.full
-  background: $white
-  margin: 3em 0 3em 0
-  z-index: 1
-  box-shadow: 0em 0.1em 0.5em -0.05em rgba($black, 0.5)
-
-  section
-    header.section-header
-      width: 100%
-
-      h1.article-title
-        display: block
-        text-align: center
-        +padding-leader(1.5, $font-size*($h1*2))
-        +adjust-font-size-to($font-size*($h1*2))
-        font-size: $font-size*($h1 * 2)
-        +padding-trailer(1.5, $font-size*($h1*2))
-
-    main.section-main
-      p.abstract
-        display: none
-      div.content
-        display: block
-        padding: 0 2em 0 2em
-        +padding-leader(0.0625, $font-size)
-        +padding-trailer(0.125, $font-size)
-        p
-          padding: 0 1em 0 1em
-          +padding-leader(0.5, $font-size)
-          +padding-trailer(0.5, $font-size)
-        h2
-          color: $black
-          font-size: $font-size * 1.5
-          +padding-trailer(0.5, 1.5*$font-size)
-          +padding-leader(0.5, 1.5*$font-size)
-        p.callout
-          display: block
-          +adjust-font-size-to($font-size * 1.75)
-
-          +padding-trailer(0.25, $font-size*1.75)
-          +padding-leader(0.25, $font-size*1.75)
-          margin: 0 2em 0 2em
-          +trailer(0.5, $font-size*1.75)
-          +leader(0.5, $font-size*1.75)
-          display: block
-          border-top: 1px rgba($gray, 0.75) solid
-          border-bottom: 1px rgba($gray, 0.75) solid
-        // background: rgba($gray, 0.25)
-
-
-        p.callout::before
-          content: '\AB'
-        p.callout::after
-          content: '\BB'
-    footer.section-footer
-
-      padding: 0 1em 0 0.5em
-      margin: 0
-      +padding-leader(0.25, $font-size)
-      +padding-trailer(0.25, $font-size)
-      color: $black
-      +display-flex(flex)
-      +flex-direction(row)
-
-      a.btn
-        +button($black, $white)
-        +align-self(flex-end)
-        text-transform: uppercase
-        content: 'lire la suite'
-        text-decoration: none
-        color: $black
-        font-weight: 500
-      a.btn:hover
-        background: rgba($black, 0.1)
-        cursor: hand
-
-
-      a[rel=author]
-        +align-self(flex-start)
-        +flex(1)
-
-      time
-        padding: 0 0.5em 0 0.5em
-        +align-self(flex-start)
-        font-size: 0.75 * $font-size
-        color: rgba($black, 0.5)
-        font-family: "Lato"
 
 
 .menu

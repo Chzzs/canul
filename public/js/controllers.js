@@ -18,13 +18,20 @@ angular.module('canul').controller('ShowController', ['$scope', '$http', '$route
 /* Editos controllers */
 
 angular.module('canul').controller('EditoController', ['$scope', '$http', function($scope, $http) {
-	$scope.show = true;
 	$http({method:'GET', url: '/edito'}).success(function (data) {
 		$scope.edito = data;
 	});
+}]);
+
+
+angular.module('canul').controller('PageController', ['$scope', '$http', function($scope) {
+	$scope.show = true;
+	$scope.main = "full";
 	$scope.toggle = function() {
 		$scope.show = ! $scope.show;
+		$scope.main = "short";
 	};
+
 }]);
 
 /* Menu controllers */
