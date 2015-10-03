@@ -1,25 +1,41 @@
-<article class="article full">
-  <!--<aside class="image-holder">
-    <img src="http://ls.rosselcdn.net/sites/default/files/imagecache/475x317/2013/08/29/1663884790_B97945015Z.1_20130829120126_000_G241630KG.1-0.jpg" alt="simpsons">
-  </aside> -->
-  <section>
-    <header class="section-header">
-      <h1 class="article-title">{{ article.title }}</h1>
-    </header>
-    <main class="section-main">
+<article>
+<md-content class="md-margin" >
+  <md-card>
+    <div class="image-holder-full">
+      <img class="image-full" ng-src="images/{{article.img}}" alt="{{article.img}}">
+    </div>
+    <md-fab-toolbar class="fab" md-open="false" count="0" md-direction="left">
+      <a ng-href="#/articles">
+      <md-fab-trigger class="align-with-text">
+        <md-button aria-label="menu" class="md-fab md-primary">
+            <md-icon md-svg-src="images/icons/arrow-up.svg"></md-icon>
+        </md-button>
+      </md-fab-trigger>
+    </a>
 
-      <div class="content" >
-        <div ng-repeat="content in article.content">
-          <h1>{{ content.header }}</h1>
-          <p>{{ content.paragraph }}</p>
+    </md-fab-toolbar>
+     <md-card-content>
+        <h1 class="md-display-1 full-title">{{ article.title }}</h1>
+        <div class="content" >
+          <div ng-repeat="content in article.content">
+            <h2 class="md-headline">{{ content.header }}</h2>
+            <p class="md-body-1">{{ content.paragraph }}</p>
+          </div>
         </div>
-      </div>
-    </main>
-    <footer class="section-footer">
-      <time pubdate="{{ article.date }}">{{ article.date | date:'shortDate' }}</time>
-      <a href="#" rel="author">{{ article.author }}</a>
-      <a href="#/articles" class="btn">Retour</a>
-    </footer>
-  </section>
+        <div>
 
+        </div>
+        <div class="row">
+          <md-divider></md-divider>
+          <div class="info" layout="row">
+            <p flex class="md-caption">{{ article.author}}, le {{article.date | date:'shortDate'}}</p>
+            <md-button flex="15" ng-href="#/articles">Retour</md-button>
+          </div>
+
+        </div>
+       </div>
+     </md-card-content>
+   </md-card>
+
+ </md-content>
 </article>

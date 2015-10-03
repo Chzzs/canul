@@ -1,12 +1,14 @@
+
 <article class="edito">
-  <nav class="edito-nav">
-    <a class= "close" ng-click="toggle()">&times;</a>
-  </nav>
-  <header class="edito-header">
-    <h1 class="edito-title">Editorial</h1>
-    <time pubdate="01/09/2015"> {{ edito.date | date:'MMMM yyyy' }}</time>
-  </header>
-  <main class="edito-main">
-    <p> {{ edito.content }}</p>
-  </main>
+<md-content class="md-margin" >
+  <md-card>
+     <md-card-content>
+        <h2 class="md-title edito-title">Éditorial </h2>
+        <time pubdate="01/09/2015"> {{ edito.date | date:'MMMM yyyy' }}</time>
+        <main class="edito-main">
+          <p class="md-body-1"> {{ edito.content }}</p>
+        </main>
+     </md-card-content>
+   </md-card>
+ </md-content>
 </article>

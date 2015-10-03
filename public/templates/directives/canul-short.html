@@ -1,31 +1,30 @@
-<article class="article short">
+<article>
+  <md-content class="md-margin">
+    <md-card>
+      <div class="image-holder-short">
+        <img class="image-short" ng-src="images/{{article.img}}" alt="{{article.img}}">
+      </div>
+      <a ng-href="#/articles/{{article._id}}">
+        <md-fab-toolbar class="fab" md-open="false" count="0" md-direction="left">
+          <md-fab-trigger class="align-with-text">
+            <md-button aria-label="menu" class="md-fab md-primary">
+              <md-icon md-svg-src="images/icons/arrow-down.svg"></md-icon>
+            </md-button>
+          </md-fab-trigger>
+        </md-fab-toolbar>
+      </a>
 
-  <!-- image-holder -->
+      <md-card-content>
+        <div class="row">
+          <h2 class="md-title short-title"><a class="title-link" ng-href="#/articles/{{article._id}}">{{ article.title }}</a></h2>
+          <p class="md-body-1"> {{article.abstract}}</p>
+        </div>
+        <div class="row">
+          <md-divider></md-divider>
 
-  <aside class="image-holder">
-    <img ng-src="images/{{article.img}}" alt="{{article.img}}">
-  </aside>
-
-  <!-- section -->
-
-  <section>
-    <header class="section-header">
-      <h1 class="article-title"><a ng-href="#/articles/{{article._id}}">{{ article.title }}</a></h1>
-    </header>
-    <main class="section-main">
-      <p class="abstract"> {{article.abstract}} </p>
-    </main>
-    <footer class="section-footer">
-      <time pubdate="{{article.date }}"> {{ article.date  | date:'shortDate' }} </time>
-      <a href="#" rel="author"> {{article.author}} </a>
-      <a ng-href="#/articles/{{article._id}}" class="btn">Lire la suite</a>
-    </footer>
-  </section>
-
-  <!-- badge-holder -->
-
-  <aside class="badge-holder">
-    <a class="badge badge-topic pink" href="#"><span> {{article.topics[0]}} </span></a>
-  </aside>
-
+          <p class="md-caption info">{{ article.author}}, le {{article.date | date:'shortDate'}}</p>
+        </div>
+      </md-card-content>
+    </md-card>
+  </md-content>
 </article>
