@@ -2,7 +2,7 @@
 
   <ul>
   <!--  <li ng-repeat="article in filtered = ( articles | filter : search )"> -->
-    <li ng-repeat="article in articles">
+    <li ng-repeat="article in articles | orderBy:'-date' ">
       <canul-short> </canul-short>
     </li>
   </ul>

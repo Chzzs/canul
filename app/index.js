@@ -24,6 +24,6 @@ var route = require('./route');
 app.use(express.static('public'));
 app.use('/', route);
 
-var server = app.listen('3000', function() {
-  console.log('Server will listen to port 3000.');
+var server = app.listen('3002', function() {
+  console.log('Server will listen to port 3002.');
 });
